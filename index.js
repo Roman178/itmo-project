@@ -1,30 +1,97 @@
-console.log("Hi boody");
-
 const prevBtn = document.querySelector(".carousel__btn_type_prev");
 const nextBtn = document.querySelector(".carousel__btn_type_next");
 const carousel = document.querySelector(".carousel__cards-box");
+const dotsBox = document.querySelector(".carousel__dots");
+const dots = dotsBox.querySelectorAll(".carousel__dot");
 
-function carouselBtnListener(slides) {
-  if (carousel.classList.contains(`carousel__cards-box_slide_${slides.a}`)) {
-    carousel.classList.remove(`carousel__cards-box_slide_${slides.a}`);
-    carousel.classList.add(`carousel__cards-box_slide_${slides.b}`);
-  } else if (
-    carousel.classList.contains(`carousel__cards-box_slide_${slides.b}`)
+function switchCarouselSlide(slides) {
+  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+  if (
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    )
   ) {
-    carousel.classList.remove(`carousel__cards-box_slide_${slides.b}`);
-    carousel.classList.add(`carousel__cards-box_slide_${slides.c}`);
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
   } else if (
-    carousel.classList.contains(`carousel__cards-box_slide_${slides.c}`)
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.b.nameSlide}`
+    )
   ) {
-    carousel.classList.remove(`carousel__cards-box_slide_${slides.c}`);
-    carousel.classList.add(`carousel__cards-box_slide_${slides.d}`);
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.b.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
+  } else if (
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.c.nameSlide}`
+    )
+  ) {
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.c.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
   } else return;
 }
 
+function switchSlideByDot(dotIndex, carouselEl, dotEl) {
+  carouselEl.className = "";
+  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+  dotEl.classList.add("carousel__dot_active");
+
+  switch (dotIndex) {
+    case 1:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_first"
+      );
+      break;
+    case 2:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_second"
+      );
+      break;
+    case 3:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_third"
+      );
+      break;
+    case 4:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_fourth"
+      );
+      break;
+    default:
+      carouselEl.classList.add("carousel__cards-box");
+      break;
+  }
+}
+
+dots.forEach((el, i) => {
+  el.addEventListener("click", () => {
+    switchSlideByDot(i + 1, carousel, el);
+  });
+});
+
 nextBtn.addEventListener("click", () => {
-  carouselBtnListener({ a: "first", b: "second", c: "third", d: "fourth" });
+  switchCarouselSlide({
+    a: { nameSlide: "first", numDot: 1 },
+    b: { nameSlide: "second", numDot: 2 },
+    c: { nameSlide: "third", numDot: 3 },
+    d: { nameSlide: "fourth", numDot: 4 },
+  });
 });
 
 prevBtn.addEventListener("click", () => {
-  carouselBtnListener({ a: "fourth", b: "third", c: "second", d: "first" });
+  switchCarouselSlide({
+    a: { nameSlide: "fourth", numDot: 4 },
+    b: { nameSlide: "third", numDot: 3 },
+    c: { nameSlide: "second", numDot: 2 },
+    d: { nameSlide: "first", numDot: 1 },
+  });
 });

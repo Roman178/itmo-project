@@ -1,4 +1,5 @@
 .page {
+  background-color: #001337;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -11,11 +12,18 @@
 }
 
 .carousel__cards-box {
+  visibility: visible;
+  opacity: 1;
   box-sizing: border-box;
   font-size: 0;
-  max-width: 1120px;
+  max-width: 1108px;
   display: flex;
   transition: transform 0.4s cubic-bezier(0.63, -0.01, 0.33, 0.95);
+}
+
+.carousel__cards-box_is-invisible {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .carousel__cards-box_slide_first {
@@ -47,6 +55,22 @@
   background-color: aqua;
 }
 
-/* .carousel__card:nth-child(3n) {
+.carousel__card:nth-child(3n) {
   margin: 0;
-} */
+}
+
+.carousel__dot {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-right: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.carousel__dot_active {
+  opacity: 1;
+}
