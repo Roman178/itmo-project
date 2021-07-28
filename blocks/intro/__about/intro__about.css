@@ -1,0 +1,16 @@
+.intro__about {
+  padding-top: 124px;
+}
+
+@media screen and (max-width: 1279) {
+  .intro__about {
+    padding-top: 120px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__about {
+    padding-top: 60px;
+  }
+}
+

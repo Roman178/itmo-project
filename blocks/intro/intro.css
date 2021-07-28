@@ -1,9 +1,32 @@
 .intro {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background-image: url(../../images/Background.png);
-  background-position: top left;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
   background-color: #001337;
+}
+
+.intro:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: 0 -80px;
+  background-repeat: no-repeat;
+  background-image: url(../../images/Background.png);
+  z-index: -1;
+}
+
+@media screen and (max-width: 1279px) {
+  .intro:before {
+    transform: scale(-1, 1);
+    background-position: 1052px -80px;
+  }
+}
+/*@media screen and (max-width: 767px) {
+  .intro:before {
+    background-position: 320px -120px;
+  }
 }

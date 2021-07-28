@@ -7,3 +7,10 @@
   line-height: 126%;
   text-align: left;
 }
+
+@media screen and (max-width: 767px) {
+  .link__bold {
+    font-size: 32px;
+    line-height: 133%;
+  }
+}
