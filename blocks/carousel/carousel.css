@@ -1,0 +1,113 @@
+.carousel {
+  max-width: 1262px;
+  border: 1px solid red;
+  overflow-x: hidden;
+  background-color: #001337;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel__cards-wrapper {
+  max-width: 1120px;
+  overflow-x: hidden;
+}
+
+.carousel__cards-box {
+  box-sizing: border-box;
+  font-size: 0;
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.63, -0.01, 0.33, 0.95);
+}
+
+.carousel__cards-box_slide_first {
+  transform: translate(0);
+}
+
+.carousel__cards-box_slide_second {
+  /* transform: translate(-1120px); */
+  transform: translate(-100%);
+}
+
+.carousel__cards-box_slide_third {
+  /* transform: translate(-2240px); */
+  transform: translate(-200%);
+}
+
+.carousel__cards-box_slide_fourth {
+  /* transform: translate(-3360px); */
+  transform: translate(-300%);
+}
+
+.carousel__card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  font-size: 35px;
+  margin-right: 20px;
+  /* display: inline-block; */
+  min-width: 360px;
+  min-height: 356px;
+  background-color: #001337;
+}
+
+.carousel__card:nth-child(3n) {
+  margin: 0;
+}
+
+.carousel__card-content {
+  background-color: #e0f0ff;
+  width: 348px;
+  min-height: 340px;
+  border-radius: 10px;
+}
+
+.carousel__card-pin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.carousel__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 60px;
+  height: 60px;
+  background-color: #001337;
+  box-shadow: 0px 4px 30px rgba(224, 240, 255, 0.1);
+  border-radius: 36px;
+}
+
+.carousel__btn_type_next {
+  transform: rotate(180deg);
+}
+
+.carousel__dot {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-right: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.carousel__dot_active {
+  opacity: 1;
+}
