@@ -1,0 +1,10 @@
+.link {
+  padding-top: 92px;
+  padding-right: 165px;
+  max-width: 445px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-end;
+}
