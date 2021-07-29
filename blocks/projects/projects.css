@@ -1,0 +1,18 @@
+.projects__cards {
+  width: 1106px;
+  min-height: 486px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__card-wrapper {
+  display: flex;
+}
+
+.projects__card {
+  /* width: 254px;
+  min-height: 228px; */
+  background-color: #009fac;
+  border-radius: 10px;
+}

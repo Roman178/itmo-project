@@ -1,2 +1,4 @@
-@import url('../blocks/root/root.css');
-@import url('../blocks/fonts/fonts.css');
+@import url("../blocks/root/root.css");
+@import url("../blocks/carousel/carousel.css");
+
+@import url("../blocks/projects/projects.css");
