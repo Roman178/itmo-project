@@ -4,15 +4,36 @@
   border: 1px solid red;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.projects__card:first-child {
+  z-index: 10;
+}
+
+.projects__cards:hover
+  .projects__card-wrapper:first-child
+  .projects__card:first-child {
+  background-color: aqua;
+  width: 537px;
+  z-index: 10;
+}
+
+.projects__cards:hover
+  .projects__card-wrapper:first-child
+  .projects__card:nth-child(2) {
+  margin-left: -283px;
 }
 
 .projects__card-wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .projects__card {
-  /* width: 254px;
-  min-height: 228px; */
+  transition: all 2s linear;
+  width: 254px;
+  min-height: 228px;
   background-color: #009fac;
   border-radius: 10px;
 }
