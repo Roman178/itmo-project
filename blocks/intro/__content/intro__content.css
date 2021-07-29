@@ -1,0 +1,27 @@
+.intro__content {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1279px) {
+  .intro__content {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .intro__content:before {
+    transform: scale(-1, 1);
+    background-position: 1052px -80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .intro__content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
