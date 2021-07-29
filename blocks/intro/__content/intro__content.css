@@ -9,19 +9,12 @@
 
 @media screen and (max-width: 1279px) {
   .intro__content {
-    padding-left: 39px;
-    padding-right: 39px;
-  }
-
-  .intro__content:before {
-    transform: scale(-1, 1);
-    background-position: 1052px -80px;
+    width: calc(100vw - 2*39px);
   }
 }
 
 @media screen and (max-width: 767px) {
   .intro__content {
-    padding-left: 16px;
-    padding-right: 16px;
+    width: calc(100vw - 2*16px)
   }
 }
