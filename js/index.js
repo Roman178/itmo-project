@@ -1,3 +1,4 @@
+// Карусель
 const prevBtn = document.querySelector(".carousel__btn_type_prev");
 const nextBtn = document.querySelector(".carousel__btn_type_next");
 const carousel = document.querySelector(".carousel__cards-box");
@@ -46,7 +47,6 @@ function switchSlideByDot(dotIndex, carouselEl, dotEl) {
   carouselEl.className = "";
   dots.forEach((el) => el.classList.remove("carousel__dot_active"));
   dotEl.classList.add("carousel__dot_active");
-
   switch (dotIndex) {
     case 1:
       carouselEl.classList.add(
@@ -78,12 +78,6 @@ function switchSlideByDot(dotIndex, carouselEl, dotEl) {
   }
 }
 
-dots.forEach((el, i) => {
-  el.addEventListener("click", () => {
-    switchSlideByDot(i + 1, carousel, el);
-  });
-});
-
 nextBtn.addEventListener("click", () => {
   switchCarouselSlide({
     a: { nameSlide: "first", numDot: 1 },
@@ -99,5 +93,11 @@ prevBtn.addEventListener("click", () => {
     b: { nameSlide: "third", numDot: 3 },
     c: { nameSlide: "second", numDot: 2 },
     d: { nameSlide: "first", numDot: 1 },
+  });
+});
+
+dots.forEach((el, i) => {
+  el.addEventListener("click", () => {
+    switchSlideByDot(i + 1, carousel, el);
   });
 });
