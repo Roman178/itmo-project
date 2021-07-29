@@ -1,11 +1,13 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* body {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #001337;
-}
+} */
 
 .carousel {
   max-width: 1262px;
@@ -131,7 +133,7 @@ body {
   margin: 0 0 8px 0;
   font-family: "Open Sans";
   font-style: italic;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   color: #009fac;
@@ -150,14 +152,14 @@ body {
 
 .carousel__card-line {
   margin: 0 0 20px 0;
-  border: 1px solid #009fac;
+  border-bottom: 2px solid #009fac;
 }
 
 .carousel__card-text {
   margin: 0;
   font-family: "Open Sans";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   color: #000d26;
@@ -173,6 +175,7 @@ body {
   }
 
   .carousel__card-title {
+    font-size: 16.5px;
     margin-bottom: 10px;
   }
 
@@ -191,7 +194,7 @@ body {
   }
 
   .carousel {
-    max-width: 729px;
+    max-width: 95vw;
     /* padding-left: 39px; */
   }
 
@@ -212,11 +215,19 @@ body {
     width: 330px;
     min-height: 330px;
   }
+
+  .carousel__card-title {
+    margin-bottom: 20px;
+  }
+
+  .carousel__card-line {
+    margin-bottom: 20px;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 426px) {
   .carousel {
-    max-width: 320px;
+    max-width: 95vw;
     /* padding-left: 39px; */
   }
   .carousel__card {
@@ -233,5 +244,25 @@ body {
     width: 288px;
     min-height: 250px;
     padding: 16px 16px 0;
+  }
+
+  .carousel__card-date {
+    font-size: 12px;
+    line-height: 145%;
+  }
+
+  .carousel__card-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .carousel__card-title {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 12px;
+  }
+
+  .carousel__card-line {
+    margin-bottom: 12px;
   }
 }
