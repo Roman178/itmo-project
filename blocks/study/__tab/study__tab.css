@@ -1,0 +1,8 @@
+.study__tab {
+  display: flex;
+  justify-content: center;
+  max-width: 540px;
+  border: 1px solid #e0f0ff;
+  margin: 0 auto;
+  border-radius: 11px;
+}
