@@ -20,3 +20,5 @@
 @import url(../blocks/about/__caption/about__caption.css);
 /*carousel*/
 @import url(../blocks/carousel/carousel.css);
+@import url('../blocks/root/root.css');
+@import url('../blocks/fonts/fonts.css');
