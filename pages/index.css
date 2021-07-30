@@ -73,3 +73,25 @@
 @import url('../blocks/connection/__subtitle/conection__subtitle.css');
 @import url('../blocks/connection/__title/connection__title.css');
 @import url('../blocks/connection/__form-container/connections__form-container.css');
+
+/* footer */
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__content/footer__content.css);
+@import url(../blocks/footer/__author/footer__author.css);
+@import url(../blocks/footer/__column/footer__column.css);
+@import url(../blocks/footer/__column-items/footer__column-items.css);
+@import url(../blocks/footer/__column-item/footer__column-item.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/__copyright/_mobile/footer__copyright_mobile.css);
+@import url(../blocks/footer/__description/footer__description.css);
+@import url(../blocks/footer/__heading/footer__heading.css);
+@import url(../blocks/footer/__heading/_large/footer__heading_large.css);
+@import url(../blocks/footer/__main-content/footer__main-content.css);
+@import url(../blocks/footer/__social-media-icon/footer__social-media-icon.css);
+@import url(../blocks/footer/__social-media-link/footer__social-media-link.css);
+@import url(../blocks/footer/__social-media-links/footer__social-media-links.css);
+@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/footer/__contacts/footer__contacts.css);
+@import url(../blocks/footer/__contact-info/footer__contact-info.css);
+@import url(../blocks/footer/__logo-wrap/footer__logo-wrap.css);
