@@ -1,0 +1,22 @@
+.study__description {
+  font-size: 18px;
+  font-weight: 400;
+  /* margin-bottom: 60px; */
+  margin: 0 50px 60px;
+  color: #fff;
+  max-width: 920px;
+}
+
+@media (max-width: 1110px) {
+  .study__description {
+    max-width: 690px;
+  }
+}
+@media (max-width: 320px) {
+  .study__description {
+    font-size: 12px;
+    max-width: 690px;
+    /* max-width: 100%; */
+    margin: 0 16px 20px;
+  }
+}

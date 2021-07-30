@@ -21,4 +21,58 @@
 /*carousel*/
 @import url(../blocks/carousel/carousel.css);
 @import url('../blocks/root/root.css');
-@import url('../blocks/fonts/fonts.css');
+/* @import url('../blocks/fonts/fonts.css'); */
+
+/* LAB */
+@import url('../blocks/lab/lab.css');
+@import url('../blocks/lab/__inner/lab__inner.css');
+@import url('../blocks/lab/__wrapper/lab__wrapper.css');
+@import url('../blocks/lab/__title/lab__title.css');
+@import url('../blocks/lab/__item/lab__item.css');
+@import url('../blocks/lab/__description/lab__description.css');
+@import url('../blocks/lab/__text/lab__text.css');
+@import url('../blocks/lab/__img/lab__img.css');
+/* LAB CARDS*/
+@import url('../blocks/lab/__cards/lab__cards.css');
+@import url('../blocks/lab/__card/lab__card.css');
+@import url('../blocks/lab/__card-analysis/lab__card-analysis.css');
+@import url('../blocks/lab/__card-description/lab__card-description.css');
+@import url('../blocks/lab/__card-icon/lab__card-icon.css');
+@import url('../blocks/lab/__card-placeholder/lab__card-placeholder.css');
+@import url('../blocks/lab/__card-text/lab__card-text.css');
+@import url('../blocks/lab/__card-btn/lab__card-btn.css');
+
+@import url('../blocks/lab/__card-analysis/lab__card-analysis.css');
+@import url('../blocks/lab/__card-infrastructure/lab__card-infrastructure.css');
+@import url('../blocks/lab/__card-cloud/lab__card-cloud.css');
+@import url('../blocks/lab/__card-qa/lab__card-qa.css');
+/* LAB POPUP*/
+@import url('../blocks/lab-popup/lab-popup.css');
+@import url('../blocks/lab-popup/__container/lab-popup__container.css');
+@import url('../blocks/lab-popup/_image-photo/lab-popup_image-photo.css');
+@import url('../blocks/lab-popup/__text-content/lab-popup__text-content.css');
+@import url('../blocks/lab-popup/_caption/lab-popup_caption.css');
+@import url('../blocks/lab-popup/_text/lab-popup_text.css');
+@import url('../blocks/lab-popup/_list/lab-popup_list.css');
+@import url('../blocks/lab-popup/_list-item/lab-popup_list-item.css');
+@import url('../blocks/lab-popup/__close-btn/lab-popup__close-btn.css');
+@import url('../blocks/lab-popup/_opened/lab-popup_opened.css');
+
+/* STUDY */
+@import url('../blocks/study/study.css');
+@import url('../blocks/study/__title/study__title.css');
+@import url('../blocks/study/__description/study__description.css');
+@import url('../blocks/study-card/study-card.css');
+@import url('../blocks/study-card/__info/study-card__info.css');
+@import url('../blocks/study-card/__title/study-card__title.css');
+@import url('../blocks/study-card/__list/study-card__list.css');
+@import url('../blocks/study-card/__list-item/study-card__list-item.css');
+@import url('../blocks/study-card/__link/study-card__link.css');
+@import url('../blocks/study-card/__img/study-card__img.css');
+
+@import url('../blocks/study/__tab/study__tab.css');
+@import url('../blocks/study/__tab-bar/study__tab-bar.css');
+@import url('../blocks/study/__tab-bar/_btn_aspirant/study__tab-bar_btn_aspirant.css');
+@import url('../blocks/study/__tab-bar/_btn_aspirant/study__tab-bar_btn_aspirant.css');
+@import url('../blocks/study/__tab-bar/_btn_magistr/study__tab-bar_btn_magistr.css');
+@import url('../blocks/study/__tab-bar/_btn_active/study__tab-bar_btn_active.css');

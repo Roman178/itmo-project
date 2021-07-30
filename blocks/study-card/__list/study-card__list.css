@@ -1,0 +1,13 @@
+.study-card__list {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0 0 30px 30px;
+}
+
+@media (max-width: 1110px) {
+  .study-card__list {
+    font-size: 12px;
+    margin: 0 0 10px 15px;
+  }
+}

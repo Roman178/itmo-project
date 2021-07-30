@@ -1,0 +1,15 @@
+.study-card__title {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin: 0 0 40px;
+}
+
+@media (max-width: 1110px) {
+  .study-card__title {
+    margin: 0 0 15px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

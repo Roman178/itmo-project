@@ -1,0 +1,7 @@
+.study__tab-bar_btn_active {
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000d26;
+  pointer-events: none;
+  cursor: default;
+}
