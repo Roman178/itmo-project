@@ -1,0 +1,22 @@
+.lab__description {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  color: #000d26;
+
+  max-width: 540px;
+  grid-column: 1/3;
+}
+@media (max-width: 768px) {
+  .lab__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .lab__description {
+    grid-column: 1/5;
+  }
+}
