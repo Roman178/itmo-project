@@ -1,0 +1,9 @@
+.partners__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 189%;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}

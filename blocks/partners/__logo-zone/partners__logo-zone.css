@@ -1,0 +1,22 @@
+.partners__logo-zone {
+  width: 100%;
+  max-width: 1110px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px -50px -10px;
+}
+
+/* @media screen and (max-width: 1279px) {
+  .partners__logo-zone {
+    max-width: calc(100vw - 2 * 39px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partners__logo-zone {
+    max-width: calc(100vw - 2 * 16px);
+  }
+} */

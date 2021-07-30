@@ -22,3 +22,12 @@
 @import url(../blocks/carousel/carousel.css);
 @import url('../blocks/root/root.css');
 @import url('../blocks/fonts/fonts.css');
+/* partners */
+@import url(../blocks/partners/partners.css);
+@import url(../blocks/partners/__content/partners__content.css);
+@import url(../blocks//partners/__logo-zone/partners__logo-zone.css);
+@import url(../blocks/partners/__logo-zone-item/partners__logo-zone-item.css);
+@import url(../blocks/partners/__logo/partners__logo.css);
+@import url(../blocks/partners/__text-content/partners__text-content.css);
+@import url(../blocks/partners/__text/partners__text.css);
+@import url(../blocks/partners/__title/partners__title.css);
