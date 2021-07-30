@@ -1,11 +1,11 @@
-body {
+/* body {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* background-color: #001337; */
-}
+  background-color: #001337;
+} */
 
 .carousel {
   max-width: 1262px;
