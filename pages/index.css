@@ -1,24 +1,43 @@
 /*page*/
+
 @import url(../blocks/page/page.css);
 @import url(../blocks/page/__section/page__section.css);
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
+
 /*intro*/
+
 @import url(../blocks/intro/intro.css);
 @import url(../blocks/intro/__content/intro__content.css);
 @import url(../blocks/intro/__link/intro__link.css);
 @import url(../blocks/intro/__about/intro__about.css);
+
 /*link*/
+
 @import url(../blocks/link/link.css);
 @import url(../blocks/link/__bold/link__bold.css);
 @import url(../blocks/link/__title/link__title.css);
 @import url(../blocks/link/__title/_size/link__title_size_s.css);
 @import url(../blocks/link/__button/link__button.css);
+
 /*about*/
+
 @import url(../blocks/about/about.css);
 @import url(../blocks/about/__title/about__title.css);
 @import url(../blocks/about/__caption/about__caption.css);
+
 /*carousel*/
+
 @import url(../blocks/carousel/carousel.css);
 @import url('../blocks/root/root.css');
 @import url('../blocks/fonts/fonts.css');
+
+/*connection*/
+
+@import url('../blocks/connection/connection.css');
+@import url('../blocks/connection/__button-send/connection__button-send.css');
+@import url('../blocks/connection/__input/connection__input.css');
+@import url('../blocks/connection/__message/connection__message.css');
+@import url('../blocks/connection/__subtitle/conection__subtitle.css');
+@import url('../blocks/connection/__title/connection__title.css');
+@import url('../blocks/connection/__form-container/connections__form-container.css');
