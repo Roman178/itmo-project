@@ -1,0 +1,9 @@
+@media screen and (max-width: 425px) {
+  .footer__column {
+    width: 140px;
+  }
+  .footer__column:first-of-type {
+    padding-left: 8px;
+  }
+}
+
