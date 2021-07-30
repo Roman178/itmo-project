@@ -1,3 +1,22 @@
+// header
+const menuOpenButton = document.querySelector('#menu-open-button');
+const menuCloseButton = document.querySelector('#menu-close-button');
+const menuContainer = document.querySelector('#menu-container');
+const headerLogo = document.querySelector('#header-logo');
+
+menuOpenButton.addEventListener('click', function() {
+  menuContainer.classList.add('header__menu-container_open');
+  menuOpenButton.classList.toggle('header__element-hidden');
+  headerLogo.classList.toggle('header__element-hidden');
+
+});
+
+menuCloseButton.addEventListener('click', function() {
+  menuContainer.classList.remove('header__menu-container_open');
+  menuOpenButton.classList.toggle('header__element-hidden');
+  headerLogo.classList.toggle('header__element-hidden');
+});
+
 // Карусель
 const prevBtn = document.querySelector(".carousel__btn_type_prev");
 const nextBtn = document.querySelector(".carousel__btn_type_next");

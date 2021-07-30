@@ -1,0 +1,10 @@
+.header__menu {
+  min-height: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__menu {
+    min-height: 0;
+    width: 100%;
+  }
+}
