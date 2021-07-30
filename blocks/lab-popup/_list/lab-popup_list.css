@@ -1,9 +1,0 @@
-.lab-popup_list {
-  margin-left: 40px;
-}
-@media (max-width: 320px) {
-  .lab-popup_list {
-    margin-left: 20px;
-    padding: 0;
-  }
-}

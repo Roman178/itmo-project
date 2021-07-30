@@ -1,8 +1,0 @@
-.lab__card-qa {
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    url(../../../images/Lab/Robot.png);
-  background-size: cover;
-}
-.lab__card-qa > .lab__card-description {
-  width: 100px;
-}
