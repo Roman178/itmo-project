@@ -1,0 +1,13 @@
+.intro__link {
+  padding-top: 92px;
+  padding-right: 165px;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 1279px) {
+  .intro__link {
+    padding-top: 58px;
+    padding-right: 0px;
+    align-self: flex-start;
+  }
+}
