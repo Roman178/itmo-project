@@ -1,0 +1,30 @@
+            .connection__input {
+                min-height: 60px;
+                border-radius: 10px;
+                border: none;
+                box-sizing: border-box;
+                padding: 19px 24px 19px 20px;
+            }
+            
+            .connection__input::placeholder {
+                color: #009FAC;
+                font-family: Open Sans;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: left;
+            }
+            
+            @media screen and (max-width: 1300px) {
+                @media screen and (max-width: 768px) {
+                    .connection__input {
+                        min-width: 100px;
+                        min-height: 44px;
+                        padding: 12px;
+                    }
+                    .connection__input::placeholder {
+                        font-size: 14px
+                    }
+                }
+            }
