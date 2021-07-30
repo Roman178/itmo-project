@@ -1,2 +1,1 @@
-# ITMO-4
- 
+# itmo-project

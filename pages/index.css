@@ -18,3 +18,5 @@
 @import url(../blocks/about/about.css);
 @import url(../blocks/about/__title/about__title.css);
 @import url(../blocks/about/__caption/about__caption.css);
+/*carousel*/
+@import url(../blocks/carousel/carousel.css);
