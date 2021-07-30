@@ -1,0 +1,10 @@
+.header__menu-close-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.5s linear;
+  background-image: url(../../../images/Menu_close.svg);
+  width: 32px;
+  height: 32px;
+}

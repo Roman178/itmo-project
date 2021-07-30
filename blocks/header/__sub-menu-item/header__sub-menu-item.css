@@ -1,0 +1,15 @@
+.header__sub-menu-item {
+  min-height: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__sub-menu-item {
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start;
+  }
+}
