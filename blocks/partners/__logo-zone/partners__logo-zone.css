@@ -7,16 +7,22 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 -10px -50px -10px;
+  /* можно сделать через grid, но не особо соответствует макету */
 }
 
-/* @media screen and (max-width: 1279px) {
+/* .partners__logo-zone::after {
+  content: "";
+  flex: auto;
+} */
+
+@media screen and (max-width: 1279px) {
   .partners__logo-zone {
-    max-width: calc(100vw - 2 * 39px);
+    margin: 0 -25px -30px -25px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .partners__logo-zone {
-    max-width: calc(100vw - 2 * 16px);
+    margin: 0 -15px -20px -15px;
   }
-} */
+}

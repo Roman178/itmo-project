@@ -2,3 +2,16 @@
   max-width: 920px;
   padding-bottom: 100px;
 }
+
+@media screen and (max-width: 1279px) {
+  .partners__text-content {
+    width: 100%;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partners__text-content {
+    padding-bottom: 40px;
+  }
+}
