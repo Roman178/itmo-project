@@ -8,7 +8,6 @@ menuOpenButton.addEventListener('click', function() {
   menuContainer.classList.add('header__menu-container_open');
   menuOpenButton.classList.toggle('header__element-hidden');
   headerLogo.classList.toggle('header__element-hidden');
-
 });
 
 menuCloseButton.addEventListener('click', function() {
@@ -119,4 +118,14 @@ dots.forEach((el, i) => {
   el.addEventListener("click", () => {
     switchSlideByDot(i + 1, carousel, el);
   });
+});
+
+// publications - share pop-up
+
+const publicationsSection = document.querySelector('.publications');
+const publicationsShareButton = publicationsSection.querySelector('.publications__card-share-button');
+const publicationsSharePopup = publicationsSection.querySelector('.publications__card-share-popup');
+
+publicationsShareButton.addEventListener('click', function() {
+  publicationsSharePopup.classList.toggle('publications__card-share-popup_open');
 });

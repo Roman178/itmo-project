@@ -1,0 +1,13 @@
+.publications__card-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 426px) {
+  .publications__card-image {
+    border-radius: 5px;
+    margin-bottom: 12px;
+  }
+}

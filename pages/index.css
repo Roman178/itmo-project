@@ -53,6 +53,33 @@
 @import url('../blocks/root/root.css');
 @import url('../blocks/fonts/fonts.css');
 
+/* publications */
+
+@import url(..//blocks/publications/publications.css);
+@import url(../blocks/publications/__content/publications__content.css);
+@import url(../blocks/publications/__title/publications__title.css);
+@import url(../blocks/publications/__carousel/publications__carousel.css);
+@import url(../blocks/publications/__card/publications__card.css);
+@import url(../blocks/publications/__card-article/publications__card-article.css);
+@import url(../blocks/publications/__card-authors/publications__card-authors.css);
+@import url(../blocks/publications/__card-content/publications__card-content.css);
+@import url(../blocks/publications/__card-image/publications__card-image.css);
+@import url(../blocks/publications/__card-learn-more-arrow/publications__card-learn-more-arrow.css);
+@import url(../blocks/publications/__card-learn-more-link/publications__card-learn-more-link.css);
+@import url(../blocks/publications/__card-link-holder/publications__card-link-holder.css);
+@import url(../blocks/publications/__card-nav-block/publications__card-nav-block.css);
+@import url(../blocks/publications/__card-share/publications__card-share.css);
+@import url(../blocks/publications/__card-share-arrow/publications__card-share-arrow.css);
+@import url(../blocks/publications/__card-share-button/publications__card-share-button.css);
+@import url(../blocks/publications/__card-share-group/publications__card-share-group.css);
+@import url(../blocks/publications/__card-share-popup/publications__card-share-popup.css);
+@import url(../blocks/publications/__card-share-popup/_open/publications__card-share-popup_open.css);
+@import url(../blocks/publications/__card-share-link/publications__card-share-link.css);
+@import url(../blocks/publications/__card-share-icon/publications__card-share-icon.css);
+@import url(../blocks/publications/__card-text-content/publications__card-text-content.css);
+@import url(../blocks/publications/__card-title/publications__card-title.css);
+
+
 /* partners */
 
 @import url(../blocks/partners/partners.css);

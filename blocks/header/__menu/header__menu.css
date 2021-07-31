@@ -1,4 +1,5 @@
 .header__menu {
+  position: relative;
   min-height: 100%;
 }
 
