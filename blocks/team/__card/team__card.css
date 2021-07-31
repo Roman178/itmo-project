@@ -1,0 +1,10 @@
+.team__card {
+    min-width: 255px;
+    min-height: 439px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}

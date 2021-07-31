@@ -1,0 +1,10 @@
+.team__title {
+    margin: 0;
+    font-family: Open Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 68px;
+    text-align: center;
+    text-transform: uppercase;
+}

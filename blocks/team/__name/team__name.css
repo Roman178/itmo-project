@@ -1,0 +1,11 @@
+.team__name {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+}
