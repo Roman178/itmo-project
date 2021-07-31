@@ -1,7 +1,5 @@
 .publications__card-share-popup {
-  position: absolute;
-  top: -70px;
-  right: -50px;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;

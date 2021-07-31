@@ -2,4 +2,7 @@
   background-image: url(../../../images/share-popup-triagle.svg);
   width: 16px;
   height: 8px;
+  position: absolute;
+  top: 0px;
+  right: 24px;
 }

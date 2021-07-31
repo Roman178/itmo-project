@@ -1,6 +1,9 @@
 .publications__card-nav-block {
-  position: relative;
-  min-height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 70px;
   background: #009FAC;
   border-radius: 0px 0px 10px 10px;
   width: 100%;
@@ -10,17 +13,27 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  transition: z-index 1s linear;
 }
 
 @media screen and (max-width: 1279px) {
   .publications__card-nav-block {
-    min-height: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .publications__card-nav-block {
+    z-index: 1;
+    position: relative;
+    bottom: auto;
+    left: auto;
   }
 }
 
 @media screen and (max-width: 767px) {
   .publications__card-nav-block {
-    min-height: 44px;
+    height: 44px;
     border-radius: 0px 0px 5px 5px;
   }
 }
