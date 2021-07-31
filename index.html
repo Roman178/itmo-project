@@ -9,6 +9,12 @@
       href="https://necolas.github.io/normalize.css/latest/normalize.css"
     />
     <link rel="stylesheet" href="./pages/index.css" />
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"
+      integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
     <title>ITMO</title>
   </head>
   <body class="root">
@@ -256,37 +262,16 @@
       </div>
     </section>
     <section class="lab"></section>
-    <section class="projects">
-      <div class="projects__cards">
-        <div class="projects__card-wrapper">
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-        </div>
-        <div class="projects__card-wrapper">
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-          <div class="projects__card">
-            <button class="projects__card-btn">BTN</button>
-          </div>
-        </div>
-      </div>
+    <section id="projects" class="projects">
+      <h3 class="projects__title">Наши проекты</h3>
+      <!-- <ul>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+      </ul> -->
+      <div class="projects__cards list"></div>
+      <ul class="pagination"></ul>
     </section>
     <section class="study"></section>
     <section class="publications"></section>
@@ -294,6 +279,57 @@
     <section class="work-with-companies"></section>
     <section class="connection"></section>
     <footer class="footer"></footer>
+    <!-- <script src="./js/vendor/list.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
+    <template id="template-card-wrapper">
+      <div class="projects__card-wrapper"></div>
+    </template>
+    <template id="template-card">
+      <div class="projects__card">
+        <div class="projects__logo"></div>
+        <p class="projects__card-text">
+          Направление включает в себя исследования и разработки технологий МО и
+          КТ. Модули для внедрения в предметные сетевые программы магистратуры с
+          элементами МО и КТ, или программы ДПО.
+        </p>
+        <a href="#" class="projects__card-link"
+          >Подробнее
+          <img
+            class="projects__arrow-more"
+            src="./images/arrow-more.svg"
+            alt="More info"
+        /></a>
+        <button class="projects__card-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="projects__svg-path-arrow"
+              d="M3 12L21 12"
+              stroke="#009FAC"
+              stroke-linecap="round"
+            />
+            <path
+              class="projects__svg-path-arrow"
+              d="M15 18L21 12L15 6"
+              stroke="#009FAC"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </template>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"
+      integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/data.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
