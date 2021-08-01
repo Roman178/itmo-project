@@ -25,6 +25,7 @@ function switchCarouselSlide(slides) {
     carousel.classList.remove(
       `carousel__cards-box_slide_${slides.b.nameSlide}`
     );
+
     carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
     dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
   } else if (

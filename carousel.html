@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Document</title>
+  </head>
+  <template>
+    <div class="carousel__card">
+      <div class="carousel__card-content">
+        <p class="carousel__card-date">Понедельник, 5 июля 2021г</p>
+        <h3 class="carousel__card-title">
+          знакомство с машинным обучением: студенты евразийского националь...
+        </h3>
+        <div class="carousel__card-line"></div>
+        <p class="carousel__card-text">
+          Университет ИТМО провел научно-исследовательскую стажировку для группы
+          магистрантов из Евразийского национального университета имени Л.Н.
+          Гумилева. Ведущие преподаватели в течение десяти дней рассказывали им
+          об основах машинного обучения.
+        </p>
+      </div>
+      <img class="carousel__card-pin" src="./images/pin.svg" alt="Pin" />
+    </div>
+  </template>
+  <body>
+    <div class="carousel">
+      <div class="carousel__wrapper">
+        <button class="carousel__btn carousel__btn_type_prev">
+          <img src="./images/arrow-right.svg" alt="arrow prev" />
+        </button>
+        <div
+          class="
+            carousel__cards-wrapper carousel__cards-wrapper_type_small-cards
+          "
+        >
+          <div class="carousel__cards-box carousel__cards-box_slide_first">
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+            <div class="carousel__card carousel__card_type_small-cards">
+              <div
+                class="
+                  carousel__card-content carousel__card-content_type_small-cards
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn_type_next">
+          <img src="./images/arrow-right.svg" alt="arrow next" />
+        </button>
+      </div>
+      <div class="carousel__dots">
+        <button class="carousel__dot carousel__dot_active"></button>
+        <button class="carousel__dot"></button>
+        <!-- <button class="carousel__dot"></button>
+        <button class="carousel__dot"></button> -->
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

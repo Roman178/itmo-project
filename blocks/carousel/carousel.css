@@ -31,6 +31,10 @@
   overflow-x: hidden;
 }
 
+.carousel__cards-wrapper_type_small-cards {
+  max-width: 1110px;
+}
+
 .carousel__cards-box {
   box-sizing: border-box;
   font-size: 0;
@@ -73,7 +77,24 @@
   background-color: #001337;
 }
 
-.carousel__card:nth-child(3n) {
+.carousel__card_type_small-cards {
+  min-width: 255px;
+  min-height: inherit;
+}
+
+.carousel__card:nth-of-type(3n) {
+  margin: 0;
+}
+
+.carousel__card_type_small-cards {
+  margin-right: 30px;
+}
+
+.carousel__card_type_small-cards:nth-of-type(3n) {
+  margin-right: 30px;
+}
+
+.carousel__card_type_small-cards:nth-of-type(4n) {
   margin: 0;
 }
 
@@ -86,6 +107,10 @@
   /* width: 330px;
   min-height: 330px; */
   border-radius: 10px;
+}
+
+.carousel__card-content_type_small-cards {
+  min-height: 439px;
 }
 
 .carousel__card-pin {
@@ -201,6 +226,7 @@
   .carousel__cards-wrapper {
     overflow-x: scroll;
   }
+
   .carousel__card {
     min-width: 344px;
     min-height: 345px;
