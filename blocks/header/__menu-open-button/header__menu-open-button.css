@@ -1,0 +1,25 @@
+.header__menu-open-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.5s linear;
+  background-image: url(../../../images/Burger_menu.svg);
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__menu-open-button {
+    position: absolute;
+    left: 39px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu-open-button {
+    left: 16px;
+  }
+}

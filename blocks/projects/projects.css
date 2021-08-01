@@ -99,6 +99,7 @@
 }
 
 .projects__card-text {
+  font-family: "Open Sans";
   margin: 0;
   font-weight: normal;
   font-size: 14px;
@@ -190,6 +191,7 @@
   line-height: 19px;
   color: #001337;
   text-decoration: none;
+  font-family: "Open Sans";
 }
 
 .projects__arrow-more {
@@ -206,4 +208,5 @@
 .pagination li .page {
   text-decoration: none;
   color: #fff;
+  font-family: "Open Sans";
 }

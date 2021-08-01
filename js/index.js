@@ -1,3 +1,4 @@
+// projects-создание, вставка карточек
 function createProjectCard(data) {
   const templateCard = document.querySelector("#template-card").content;
   const clonedCard = templateCard
@@ -30,11 +31,12 @@ function decomposeDataDepByScreenSize() {
   let arrWithActNumCardsArrs = [];
   let arr = [];
 
-  let numCardsInWrapper = 0;
-  window.innerWidth > 1023 ? (numCardsInWrapper = 4) : null;
+  // Решить
+  // let numCardsInWrapper = 0;
+  // window.innerWidth > 1023 ? (numCardsInWrapper = 4) : null;
 
   for (let i = 0; i < arrCards.length; i++) {
-    if (arr.length !== numCardsInWrapper) {
+    if (arr.length !== 4) {
       arr.push(arrCards[i]);
       if (i === arrCards.length - 1) arrWithActNumCardsArrs.push(arr);
     } else {
@@ -60,8 +62,7 @@ cardWrappers.forEach((el) => {
   document.querySelector(".projects__cards").append(el);
 });
 
-// Блок projects, карточки.
-
+// projects-открывающиеся карточки
 const allCardWrappers = document.querySelectorAll(".projects__card-wrapper");
 
 function openCloseCard(card, cardWrapper) {
@@ -168,7 +169,7 @@ allCardWrappers.forEach((cardWrapper, index) => {
   });
 });
 
-// Пагинация
+// projects-пагинация
 
 const cardList = new List("projects", {
   valuesName: ["projects__card-wrapper"],
@@ -177,3 +178,124 @@ const cardList = new List("projects", {
 });
 
 console.log(cardList);
+// header
+const menuOpenButton = document.querySelector("#menu-open-button");
+const menuCloseButton = document.querySelector("#menu-close-button");
+const menuContainer = document.querySelector("#menu-container");
+const headerLogo = document.querySelector("#header-logo");
+
+menuOpenButton.addEventListener("click", function () {
+  menuContainer.classList.add("header__menu-container_open");
+  menuOpenButton.classList.toggle("header__element-hidden");
+  headerLogo.classList.toggle("header__element-hidden");
+});
+
+menuCloseButton.addEventListener("click", function () {
+  menuContainer.classList.remove("header__menu-container_open");
+  menuOpenButton.classList.toggle("header__element-hidden");
+  headerLogo.classList.toggle("header__element-hidden");
+});
+
+// Карусель
+const prevBtn = document.querySelector(".carousel__btn_type_prev");
+const nextBtn = document.querySelector(".carousel__btn_type_next");
+const carousel = document.querySelector(".carousel__cards-box");
+const dotsBox = document.querySelector(".carousel__dots");
+const dots = dotsBox.querySelectorAll(".carousel__dot");
+
+function switchCarouselSlide(slides) {
+  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+  if (
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    )
+  ) {
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
+    dots[slides.b.numDot - 1].classList.add("carousel__dot_active");
+  } else if (
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.b.nameSlide}`
+    )
+  ) {
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.b.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
+    dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
+  } else if (
+    carousel.classList.contains(
+      `carousel__cards-box_slide_${slides.c.nameSlide}`
+    )
+  ) {
+    carousel.classList.remove(
+      `carousel__cards-box_slide_${slides.c.nameSlide}`
+    );
+    carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
+    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+  } else {
+    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+    return;
+  }
+}
+
+function switchSlideByDot(dotIndex, carouselEl, dotEl) {
+  carouselEl.className = "";
+  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+  dotEl.classList.add("carousel__dot_active");
+  switch (dotIndex) {
+    case 1:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_first"
+      );
+      break;
+    case 2:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_second"
+      );
+      break;
+    case 3:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_third"
+      );
+      break;
+    case 4:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_fourth"
+      );
+      break;
+    default:
+      carouselEl.classList.add("carousel__cards-box");
+      break;
+  }
+}
+
+nextBtn.addEventListener("click", () => {
+  switchCarouselSlide({
+    a: { nameSlide: "first", numDot: 1 },
+    b: { nameSlide: "second", numDot: 2 },
+    c: { nameSlide: "third", numDot: 3 },
+    d: { nameSlide: "fourth", numDot: 4 },
+  });
+});
+
+prevBtn.addEventListener("click", () => {
+  switchCarouselSlide({
+    a: { nameSlide: "fourth", numDot: 4 },
+    b: { nameSlide: "third", numDot: 3 },
+    c: { nameSlide: "second", numDot: 2 },
+    d: { nameSlide: "first", numDot: 1 },
+  });
+});
+
+dots.forEach((el, i) => {
+  el.addEventListener("click", () => {
+    switchSlideByDot(i + 1, carousel, el);
+  });
+});
