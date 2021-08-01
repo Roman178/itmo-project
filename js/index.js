@@ -321,5 +321,9 @@ for (let i = 1; i <= publCardsNumberUp; i++) {
 
 const publDots = document.querySelectorAll('.carousel__dot_publications');
 
+const publBtnNext = document.querySelector('#publications-carousel-next-btn');
+const publBtnPrev = document.querySelector('#publications-carousel-prev-btn');
+
+const publCardBox = document.querySelector('.publications__carousel-cards-box');
 
 
