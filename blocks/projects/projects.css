@@ -18,7 +18,7 @@
 }
 
 .projects__title {
-  margin: 0;
+  margin: 0 0 30px;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
@@ -29,10 +29,40 @@
   color: #ffffff;
 }
 
+.projects__categories {
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style-type: none;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 0 60px;
+}
+
+.projects__ctgr-item {
+  flex-grow: 1;
+  text-align: center;
+  padding-bottom: 6.5px;
+  cursor: pointer;
+}
+.projects__ctgr-item_active {
+  border-bottom: 5px solid #009fac;
+}
+
 .projects__cards {
   width: 1106px;
   min-height: 486px;
-
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,6 +148,7 @@
 }
 
 .projects__card-btn {
+  align-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +168,6 @@
   background-color: #009fac;
   transform: rotate(180deg);
   /* margin-left: auto; */
-  align-self: flex-end;
   margin-top: -39px;
 }
 
@@ -153,6 +183,7 @@
   width: 100%;
   min-height: 48px;
   background-repeat: no-repeat;
+  background-size: contain;
   transition: all 0.3s linear;
 }
 
@@ -200,13 +231,181 @@
   margin-left: 12px;
 }
 
+.projects__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 344px;
+}
+
+.projects__pag-btn {
+  background-color: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination {
+  padding: 0;
+  margin: 0;
+  width: 222px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .pagination li {
   display: inline-block;
   padding: 5px;
 }
 
-.pagination li .page {
+.pagination li a {
   text-decoration: none;
   color: #fff;
   font-family: "Open Sans";
+}
+
+.pagination .active {
+  border-bottom: 2px solid #009fac;
+}
+
+@media screen and (max-width: 1200px) {
+  .projects__cards {
+    width: 690px;
+    min-height: 428px;
+  }
+
+  .projects__categories {
+    max-width: 690px;
+  }
+
+  .projects__card {
+    width: 210px;
+    height: 199px;
+  }
+
+  .projects__card-text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 167%;
+    letter-spacing: 0.1px;
+  }
+
+  .projects__card-text_opened {
+    margin-bottom: 8px;
+  }
+
+  .projects__card-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .projects__card_type_opened {
+    width: 450px;
+  }
+
+  .projects__card_type_covered-left {
+    margin-left: -34.8%;
+  }
+
+  .projects__card_type_covered-right {
+    margin-right: -34.8%;
+  }
+
+  .projects__card-link_opened {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projects {
+    padding: 40px 0;
+  }
+
+  .projects__cards {
+    width: 288px;
+    min-height: 268px;
+  }
+
+  .projects__card {
+    padding: 10px;
+    width: 140px;
+    height: 130px;
+  }
+
+  .projects__logo {
+    min-height: 26px;
+  }
+
+  .projects__card-text {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+    max-height: 55px;
+  }
+
+  .projects__card-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .projects__svg-arrow {
+    width: 12px;
+  }
+
+  .projects__card_type_opened {
+    width: 288px;
+  }
+
+  .projects__card_type_covered-left {
+    margin-left: -48.5%;
+  }
+
+  .projects__card-link {
+    display: none;
+  }
+
+  .projects__card-text_opened {
+    margin: 0;
+    max-height: 98px;
+    max-width: 172px;
+  }
+
+  .projects__card_type_covered-right {
+    margin-right: -48.5%;
+  }
+
+  .projects__pagination {
+    width: 288px;
+  }
+
+  .projects__categories {
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 28px;
+  }
+
+  .projects__ctgr-item_active {
+    border-bottom: 3px solid #009fac;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+  }
+
+  .projects__title {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+
+  .projects__pag-btn {
+    width: 24px;
+  }
+
+  .projects__pag-arrow {
+    width: 100%;
+    vertical-align: middle;
+  }
 }

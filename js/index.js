@@ -25,42 +25,143 @@ function createCardWrapper() {
   return clonedCardWrapper;
 }
 
-const arrCards = projectsCards.map((i) => createProjectCard(i));
-
-function decomposeDataDepByScreenSize() {
+function decomposeDataDepByScreenSize(arrNodesElsCards) {
   let arrWithActNumCardsArrs = [];
   let arr = [];
+
+  const screenSize =
+    document.body.scrollWidth > 1201
+      ? 4
+      : document.body.scrollWidth > 751
+      ? 3
+      : 2;
 
   // Решить
   // let numCardsInWrapper = 0;
   // window.innerWidth > 1023 ? (numCardsInWrapper = 4) : null;
 
-  for (let i = 0; i < arrCards.length; i++) {
-    if (arr.length !== 4) {
-      arr.push(arrCards[i]);
-      if (i === arrCards.length - 1) arrWithActNumCardsArrs.push(arr);
+  for (let i = 0; i < arrNodesElsCards.length; i++) {
+    if (arr.length !== screenSize) {
+      arr.push(arrNodesElsCards[i]);
+      if (i === arrNodesElsCards.length - 1) arrWithActNumCardsArrs.push(arr);
     } else {
       arrWithActNumCardsArrs.push(arr);
       arr = [];
-      arr.push(arrCards[i]);
+      arr.push(arrNodesElsCards[i]);
     }
   }
   return arrWithActNumCardsArrs;
 }
 
-const actNumCards = decomposeDataDepByScreenSize();
+function pasteCardsInDoc(actualArrOfCards) {
+  const actNumCards = decomposeDataDepByScreenSize(actualArrOfCards);
 
-const cardWrappers = actNumCards.map((arr) => {
-  const wrapper = createCardWrapper();
-  arr.forEach((el) => {
-    wrapper.append(el);
+  const cardWrappers = actNumCards.map((arr) => {
+    const wrapper = createCardWrapper();
+    arr.forEach((el) => {
+      wrapper.append(el);
+    });
+    return wrapper;
   });
-  return wrapper;
+
+  cardWrappers.forEach((el) => {
+    document.querySelector(".projects__cards").append(el);
+  });
+
+  cardWrappers.forEach((cardWrapper, index) => {
+    const rowCards = cardWrapper.querySelectorAll(".projects__card");
+    rowCards.forEach((card, i) => {
+      card.key = i + "";
+      card.addEventListener("click", () => openCloseCard(card, cardWrapper));
+    });
+  });
+}
+
+function clearCards() {
+  document.querySelectorAll(".projects__card-wrapper").forEach((el) => {
+    el.remove();
+  });
+}
+
+const arrCards = projectsCards.map((i) => createProjectCard(i));
+pasteCardsInDoc(arrCards);
+
+function filterCards(tab) {
+  document.querySelectorAll(".projects__ctgr-item").forEach((el) => {
+    el.classList.remove("projects__ctgr-item_active");
+  });
+
+  tab.classList.add("projects__ctgr-item_active");
+
+  const filteredCards = projectsCards
+    .filter((j) => j.category === tab.id)
+    .map((i) => createProjectCard(i));
+
+  clearCards();
+  if (tab.id === "all-projects") {
+    document.location.reload();
+    // pasteCardsInDoc(arrCards);
+  } else {
+    pasteCardsInDoc(filteredCards);
+  }
+
+  pastePagination();
+}
+
+const allProjectsTab = document.querySelector("#all-projects");
+const govProjectsTab = document.querySelector("#government");
+const specialProjectsTab = document.querySelector("#special");
+const indevProjectsTab = document.querySelector("#indev");
+
+govProjectsTab.addEventListener("click", () => {
+  filterCards(govProjectsTab);
 });
 
-cardWrappers.forEach((el) => {
-  document.querySelector(".projects__cards").append(el);
+allProjectsTab.addEventListener("click", () => {
+  filterCards(allProjectsTab);
 });
+
+specialProjectsTab.addEventListener("click", () => {
+  filterCards(specialProjectsTab);
+});
+
+indevProjectsTab.addEventListener("click", () => {
+  filterCards(indevProjectsTab);
+});
+
+// projects-пагинация. Плагин List.js.
+
+function pastePagination() {
+  const cardList = new List("projects", {
+    valuesName: ["projects__card-wrapper"],
+    page: 2,
+    pagination: [
+      {
+        right: 1,
+      },
+    ],
+  });
+
+  cardList.on("updated", (e) => {
+    const anchorProjects = document.querySelector(
+      '.header__link[href*="projects"]'
+    );
+    setTimeout(() => anchorProjects.click());
+    // const wrappers = e.listContainer.querySelectorAll(
+    //   ".projects__card-wrapper"
+    // );
+
+    // wrappers.forEach((cardWrapper, index) => {
+    //   const rowCards = cardWrapper.querySelectorAll(".projects__card");
+    //   rowCards.forEach((card, i) => {
+    //     card.key = i + "";
+    //     card.addEventListener("click", () => openCloseCard(card, cardWrapper));
+    //   });
+    // });
+  });
+}
+
+pastePagination();
 
 // projects-открывающиеся карточки
 const allCardWrappers = document.querySelectorAll(".projects__card-wrapper");
@@ -155,29 +256,22 @@ function openCloseCard(card, cardWrapper) {
   });
 
   if (+card.key + 1 === cardWrapper.children.length) {
+    // debugger;
     leftClosestCard.classList.add("projects__card_type_covered-right");
   } else {
+    // debugger;
     rigthClosestCard.classList.add("projects__card_type_covered-left");
   }
 }
 
-allCardWrappers.forEach((cardWrapper, index) => {
-  const rowCards = cardWrapper.querySelectorAll(".projects__card");
-  rowCards.forEach((card, i) => {
-    card.key = i + "";
-    card.addEventListener("click", () => openCloseCard(card, cardWrapper));
-  });
-});
+// allCardWrappers.forEach((cardWrapper, index) => {
+//   const rowCards = cardWrapper.querySelectorAll(".projects__card");
+//   rowCards.forEach((card, i) => {
+//     card.key = i + "";
+//     card.addEventListener("click", () => openCloseCard(card, cardWrapper));
+//   });
+// });
 
-// projects-пагинация
-
-const cardList = new List("projects", {
-  valuesName: ["projects__card-wrapper"],
-  page: 2,
-  pagination: [{ right: 1 }],
-});
-
-console.log(cardList);
 // header
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");

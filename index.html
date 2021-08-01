@@ -229,14 +229,22 @@
     <section class="lab"></section>
     <section id="projects" class="projects">
       <h3 class="projects__title">Наши проекты</h3>
-      <!-- <ul>
-        <li>Something</li>
-        <li>Something</li>
-        <li>Something</li>
-        <li>Something</li>
-      </ul> -->
+      <ul class="projects__categories">
+        <li id='all-projects' class="projects__ctgr-item projects__ctgr-item_active">Все проекты</li>
+        <li id='government' class="projects__ctgr-item" >Гос. проекты</li>
+        <li id='special' class="projects__ctgr-item" >Спецпрограммы</li>
+        <li id='indev' class="projects__ctgr-item" >В разработке</li>
+      </ul>
       <div class="projects__cards list"></div>
-      <ul class="pagination"></ul>
+      <div class="projects__pagination">
+          <button type="button" class="projects__pag-btn">
+            <img class="projects__pag-arrow" src="./images/arrow-left.svg" alt="Arrow left">
+          </button>
+          <ul class="pagination"></ul>
+          <button type="button" class="projects__pag-btn">
+            <img class="projects__pag-arrow" src="./images/arrow-right.svg" alt="Arrow right">
+          </button>
+        </div>
     </section>
     <section class="study"></section>
     <section class="publications"></section>
@@ -383,7 +391,7 @@
           КТ. Модули для внедрения в предметные сетевые программы магистратуры с
           элементами МО и КТ, или программы ДПО.
         </p>
-        <a href="#" class="projects__card-link"
+        <a href="#!" class="projects__card-link"
           >Подробнее
           <img
             class="projects__arrow-more"
@@ -392,6 +400,7 @@
         /></a>
         <button class="projects__card-btn">
           <svg
+            class="projects__svg-arrow"
             width="24"
             height="24"
             viewBox="0 0 24 24"
