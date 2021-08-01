@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: darkkhaki;
     margin: 0, auto;
     overflow-x: hidden;
     align-items: center;
+    background: linear-gradient(180deg, rgba(224, 240, 255, 1) 50%, rgba(0, 19, 55, 1) 50%);
 }
