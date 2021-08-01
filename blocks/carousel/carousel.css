@@ -109,6 +109,12 @@
   border-radius: 36px;
 }
 
+.carousel__btn_publications {
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(1, 54, 157, 0.15);
+  border-radius: 36px;
+}
+
 .carousel__btn_type_next {
   transform: rotate(180deg);
 }
@@ -123,6 +129,10 @@
   height: 8px;
   border-radius: 50%;
   opacity: 0.5;
+}
+
+.carousel__dot_publications {
+  background-color: #001337;
 }
 
 .carousel__dot_active {

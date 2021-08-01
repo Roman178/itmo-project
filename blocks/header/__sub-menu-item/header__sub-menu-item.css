@@ -6,6 +6,10 @@
   align-content: center;
 }
 
+.header__sub-menu-item:hover {
+  background: #009FAC;
+}
+
 @media screen and (max-width: 1023px) {
   .header__sub-menu-item {
     width: 100%;

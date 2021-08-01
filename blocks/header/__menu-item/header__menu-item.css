@@ -10,7 +10,7 @@
   min-height: 80px;
 }
 
-.header__menu-item:hover > .header__sub-menu {
+.header__menu-item:hover .header__sub-menu {
   display: flex;
 }
 /* .header__lang-link:hover {
