@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+/* .root {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+} */
+
+.projects {
+  padding: 80px 0 61px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #001337;
+}
+
+.projects__title {
+  margin: 0 0 30px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 189%;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.projects__categories {
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style-type: none;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 0 60px;
+}
+
+.projects__ctgr-item {
+  flex-grow: 1;
+  text-align: center;
+  padding-bottom: 6.5px;
+  cursor: pointer;
+}
+.projects__ctgr-item_active {
+  border-bottom: 5px solid #009fac;
+}
+
+.projects__cards {
+  width: 1106px;
+  min-height: 486px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projects__card {
+  box-sizing: border-box;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  width: 254px;
+  height: 228px;
+  background-image: url("../../images/factory-bckgr.png");
+  background-size: contain;
+  background-color: #009fac;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projects__card_type_opened {
+  background-color: #e0f0ff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  /* width: 537px; */
+  width: 48.7%;
+  z-index: 10;
+}
+
+/* .projects__card_type_opened:nth-of-type(4n) {
+  background-position: left center;
+} */
+
+.projects__card_z-indexed {
+  z-index: 10;
+  background-size: contain;
+  /* background-position: right center; */
+}
+
+.projects__card_type_covered-left {
+  /* margin-left: -283px; */
+  margin-left: -25.7%;
+}
+
+.projects__card_type_covered-right {
+  margin-right: -25.7%;
+}
+
+.projects__card_bg-img_laptop {
+  background-image: url("../../images/laptop-bckgr.png");
+}
+
+.projects__card-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects__card_type_test {
+  background-color: black;
+}
+
+.projects__card-text {
+  font-family: "Open Sans";
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.1px;
+  max-height: 80px;
+  max-width: 194px;
+  overflow-y: hidden;
+  color: #fff;
+}
+
+.projects__card-text_opened {
+  max-height: 137px;
+  color: #001337;
+  margin-bottom: 20px;
+}
+
+.projects__card-btn {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(1, 54, 157, 0.15);
+  border-radius: 36px;
+  transition: all 0.3s linear;
+}
+
+.projects__card-btn_opened {
+  transition: all 0.3s linear;
+  background-color: #009fac;
+  transform: rotate(180deg);
+  /* margin-left: auto; */
+  margin-top: -39px;
+}
+
+.projects__svg-path-arrow {
+  transition: all 0.3s linear;
+}
+
+.projects__svg-path-arrow_opened {
+  stroke: #fff;
+}
+
+.projects__logo {
+  width: 100%;
+  min-height: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.3s linear;
+}
+
+.projects__logo_type_opened {
+  background-position: right;
+  margin-bottom: -47px;
+}
+
+.projects__logo_company_first {
+  background-image: url("../../images/gazprom-logo.svg");
+}
+
+.projects__logo_company_first_theme_dark {
+  background-image: url("../../images/gazprom-logo-dark.svg");
+}
+
+.projects__logo_company_second {
+  background-image: url("../../images/sber-logo.svg");
+}
+
+.projects__logo_company_second_theme_dark {
+  background-image: url("../../images/sber-logo-dark.svg");
+}
+
+.projects__card-link {
+  /* visibility: hidden;
+  opacity: 0; */
+  display: none;
+}
+
+.projects__card-link_opened {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #001337;
+  text-decoration: none;
+  font-family: "Open Sans";
+}
+
+.projects__arrow-more {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+
+.projects__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 344px;
+}
+
+.projects__pag-btn {
+  background-color: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination {
+  padding: 0;
+  margin: 0;
+  width: 222px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.pagination li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Open Sans";
+}
+
+.pagination .active {
+  border-bottom: 2px solid #009fac;
+}
+
+@media screen and (max-width: 1200px) {
+  .projects__cards {
+    width: 690px;
+    min-height: 428px;
+  }
+
+  .projects__categories {
+    max-width: 690px;
+  }
+
+  .projects__card {
+    width: 210px;
+    height: 199px;
+  }
+
+  .projects__card-text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 167%;
+    letter-spacing: 0.1px;
+  }
+
+  .projects__card-text_opened {
+    margin-bottom: 8px;
+  }
+
+  .projects__card-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .projects__card_type_opened {
+    width: 450px;
+  }
+
+  .projects__card_type_covered-left {
+    margin-left: -34.8%;
+  }
+
+  .projects__card_type_covered-right {
+    margin-right: -34.8%;
+  }
+
+  .projects__card-link_opened {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projects {
+    padding: 40px 0;
+  }
+
+  .projects__cards {
+    width: 288px;
+    min-height: 268px;
+  }
+
+  .projects__card {
+    padding: 10px;
+    width: 140px;
+    height: 130px;
+  }
+
+  .projects__logo {
+    min-height: 26px;
+  }
+
+  .projects__card-text {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+    max-height: 55px;
+  }
+
+  .projects__card-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .projects__svg-arrow {
+    width: 12px;
+  }
+
+  .projects__card_type_opened {
+    width: 288px;
+  }
+
+  .projects__card_type_covered-left {
+    margin-left: -48.5%;
+  }
+
+  .projects__card-link {
+    display: none;
+  }
+
+  .projects__card-text_opened {
+    margin: 0;
+    max-height: 98px;
+    max-width: 172px;
+  }
+
+  .projects__card_type_covered-right {
+    margin-right: -48.5%;
+  }
+
+  .projects__pagination {
+    width: 288px;
+  }
+
+  .projects__categories {
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 28px;
+  }
+
+  .projects__ctgr-item_active {
+    border-bottom: 3px solid #009fac;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+  }
+
+  .projects__title {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+
+  .projects__pag-btn {
+    width: 24px;
+  }
+
+  .projects__pag-arrow {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
