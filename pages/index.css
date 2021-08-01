@@ -1,7 +1,7 @@
-@import url('../blocks/root/root.css');
+@import url('../blocks/page/page.css');
 @import url('../blocks/fonts/fonts.css');
 
-@import url('../blocks/root/__study/root__study.css');
+@import url('../blocks/page/__study/page__study.css');
 @import url('../blocks/study/study.css');
 @import url('../blocks/study/__title/study__title.css');
 @import url('../blocks/study/__description/study__description.css');
