@@ -1,20 +1,20 @@
 .connection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #009FAC;
     color: white;
-    padding: 80px 165px;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media screen and (max-width: 977px) {
+@media screen and (max-width: 1279px) {
     .connection {
-        padding: 60px 39px;
+        padding: 80px 0;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 767px) {
     .connection {
-        padding: 40px 16px;
+        padding: 40px 0px;
     }
 }
