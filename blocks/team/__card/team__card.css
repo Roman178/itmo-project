@@ -8,3 +8,17 @@
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 1279px) {
+    .team__card {
+        min-width: 210px;
+        min-height: 337px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .team__card {
+        min-width: 140px;
+        min-height: 256px;
+    }
+}

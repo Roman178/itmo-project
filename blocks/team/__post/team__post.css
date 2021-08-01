@@ -11,3 +11,17 @@
     padding-top: 4px;
     padding-bottom: 10px;
 }
+
+@media screen and (max-width: 1279px) {
+    .team__post {
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .team__name {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
