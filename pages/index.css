@@ -21,7 +21,7 @@
 @import url(../blocks/link/__button/link__button.css);
 
 /* header */
-@import url(../blocks/root/root.css);
+/* @import url(../blocks/root/root.css); */
 @import url(../blocks/logo/logo.css);
 @import url(../blocks/logo/_footer/logo_footer.css);
 
@@ -50,8 +50,11 @@
 /*carousel*/
 
 @import url(../blocks/carousel/carousel.css);
-@import url('../blocks/root/root.css');
-@import url('../blocks/fonts/fonts.css');
+/* @import url("../blocks/root/root.css");
+@import url("../blocks/fonts/fonts.css"); */
+
+/* projects */
+@import url("../blocks/projects/projects.css");
 
 /* partners */
 
@@ -66,13 +69,13 @@
 
 /*connection*/
 
-@import url('../blocks/connection/connection.css');
-@import url('../blocks/connection/__button-send/connection__button-send.css');
-@import url('../blocks/connection/__input/connection__input.css');
-@import url('../blocks/connection/__message/connection__message.css');
-@import url('../blocks/connection/__subtitle/conection__subtitle.css');
-@import url('../blocks/connection/__title/connection__title.css');
-@import url('../blocks/connection/__form-container/connections__form-container.css');
+@import url("../blocks/connection/connection.css");
+@import url("../blocks/connection/__button-send/connection__button-send.css");
+@import url("../blocks/connection/__input/connection__input.css");
+@import url("../blocks/connection/__message/connection__message.css");
+@import url("../blocks/connection/__subtitle/conection__subtitle.css");
+@import url("../blocks/connection/__title/connection__title.css");
+@import url("../blocks/connection/__form-container/connections__form-container.css");
 
 /* footer */
 

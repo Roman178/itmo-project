@@ -227,7 +227,17 @@
     </section>
 
     <section class="lab"></section>
-    <section class="projects"></section>
+    <section id="projects" class="projects">
+      <h3 class="projects__title">Наши проекты</h3>
+      <!-- <ul>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+        <li>Something</li>
+      </ul> -->
+      <div class="projects__cards list"></div>
+      <ul class="pagination"></ul>
+    </section>
     <section class="study"></section>
     <section class="publications"></section>
     <section class="team"></section>
@@ -351,18 +361,66 @@
               <p class="footer__text">anna.lutsenko@itmo.ru</p>
             </div>
             <div class="footer__social-media-links">
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/VK.svg" alt="VK"></a>
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Facebook.svg" alt="FB"></a>
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Telegram.svg" alt="Telegram"></a>
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Insta.svg" alt="Instagram"></a>
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/You Tube.svg" alt="YouTube"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="./images/Icon/VK.svg" alt="VK"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="./images/Icon/Facebook.svg" alt="FB"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="./images/Icon/Telegram.svg" alt="Telegram"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="./images/Icon/Insta.svg" alt="Instagram"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="./images/Icon/You Tube.svg" alt="YouTube"></a>
             </div>
           </div>
         </div>
         <p class="footer__author">Сделано студентами Яндекс. Практикума</p>
       </div>
     </footer>
+    <template id="template-card-wrapper">
+      <div class="projects__card-wrapper"></div>
+    </template>
+    <template id="template-card">
+      <div class="projects__card">
+        <div class="projects__logo"></div>
+        <p class="projects__card-text">
+          Направление включает в себя исследования и разработки технологий МО и
+          КТ. Модули для внедрения в предметные сетевые программы магистратуры с
+          элементами МО и КТ, или программы ДПО.
+        </p>
+        <a href="#" class="projects__card-link"
+          >Подробнее
+          <img
+            class="projects__arrow-more"
+            src="./images/arrow-more.svg"
+            alt="More info"
+        /></a>
+        <button class="projects__card-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="projects__svg-path-arrow"
+              d="M3 12L21 12"
+              stroke="#009FAC"
+              stroke-linecap="round"
+            />
+            <path
+              class="projects__svg-path-arrow"
+              d="M15 18L21 12L15 6"
+              stroke="#009FAC"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </template>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"
+      integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/data.js"></script>
     <script src="./js/index.js"></script>
 </body>
-
 </html>
