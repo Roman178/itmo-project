@@ -590,3 +590,74 @@ const publCardsNumberUp = Math.ceil(publCards.length / 3);
 for (let i = 1; i <= publCardsNumberUp; i++) {
   document.querySelector('#publications-dots').append(document.querySelector('#publications-dot').content.cloneNode(true));
 }
+
+// / Карусель publications
+
+const publBtnNext = document.querySelector('#publications-carousel-next-btn');
+const publBtnPrev = document.querySelector('#publications-carousel-prev-btn');
+const publDots = document.querySelectorAll('.carousel__dot_publications');
+
+// for (let i = 3; i < publCards.length; i++) {
+//   publCards[i].classList.add('publications__card_hidden');
+// }
+
+publDots[0].classList.add('carousel__dot_active');
+
+let i = 0;
+
+publBtnNext.addEventListener('click', moveLeft);
+function moveLeft(){
+  for (let i = 0; i < publCards.length; i++) {
+    publCards[i].classList.add('publications__card_hidden');
+  }
+    publCards[i].classList.add('publications__card_hidden');
+    publCards[i+1].classList.add('publications__card_hidden');
+    publCards[i+2].classList.add('publications__card_hidden');
+    publCards[i+3].classList.remove('publications__card_hidden');
+    publCards[i+4].classList.remove('publications__card_hidden');
+    publCards[i+5].classList.remove('publications__card_hidden');
+    i = i + 3;
+    publDots.forEach (function(item, index) {
+      if (!(publCards[3 * index].classList.contains('publications__card_hidden'))) {
+        publDots[index].classList.add('carousel__dot_active');
+      } else {
+        publDots[index].classList.remove('carousel__dot_active');
+      }
+    });
+}
+
+publBtnPrev.addEventListener('click', moveRight);
+function moveRight(){
+  for (let i = 0; i < publCards.length; i++) {
+    publCards[i].classList.add('publications__card_hidden');
+  }
+  publCards[i-1].classList.remove('publications__card_hidden');
+  publCards[i-2].classList.remove('publications__card_hidden');
+  publCards[i-3].classList.remove('publications__card_hidden');
+  publCards[i].classList.add('publications__card_hidden');
+  publCards[i+1].classList.add('publications__card_hidden');
+  publCards[i+2].classList.add('publications__card_hidden');
+  i = i - 3;
+  publDots.forEach (function(item, index) {
+    if (!(publCards[3 * index].classList.contains('publications__card_hidden'))) {
+      publDots[index].classList.add('carousel__dot_active');
+    } else {
+      publDots[index].classList.remove('carousel__dot_active');
+    }
+  });
+}
+
+publDots.forEach (function(item, index, array) {
+  publDots[index].addEventListener('click', function() {
+    publCards.forEach (function(card) {
+      card.classList.add('publications__card_hidden');
+    });
+    publCards[index * 3].classList.remove('publications__card_hidden');
+    publCards[index * 3 + 1].classList.remove('publications__card_hidden');
+    publCards[index * 3 + 2].classList.remove('publications__card_hidden');
+    array.forEach (function(dot) {
+      dot.classList.remove('carousel__dot_active');
+    });
+    array[index].classList.add('carousel__dot_active');
+  });
+});
