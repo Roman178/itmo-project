@@ -12,6 +12,18 @@
   }
 }
 
+@media screen and (max-width: 1160px) {
+  .publications__content {
+    width: calc(100vw - 2 * 10px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .publications__content {
+    width: calc(100vw - 2 * 39px);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .publications__content {
     width: calc(100vw - 2 * 16px);

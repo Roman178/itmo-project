@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./pages/index.css" />
     <title>ITMO</title>
+
 </head>
 
 <body class="page">
@@ -234,26 +235,24 @@
       <div class="publications__content">
         <h2 class="publications__title">ПУБЛИКАЦИИ</h2>
         <div class="publications__carousel">
-          <div class="carousel__wrapper">
-            <button class="carousel__btn carousel__btn_publications carousel__btn_type_prev">
+          <div class="publications__carousel-wrapper">
+            <button class="carousel__btn carousel__btn_publications carousel__btn_type_prev" id="publications-carousel-prev-btn">
               <img src="./images/arrow-right-publ.svg" alt="arrow prev"/>
             </button>
-            <div class="carousel__cards-wrapper">
-              <div class="carousel__cards-box carousel__cards-box_slide_first" id="publications-cards-box">
+            <div class="publications__carousel-cards-wrapper">
+              <div class="publications__carousel-cards-box carousel__cards-box_slide_first" id="publications-cards-box">
 
               </div>
             </div>
-            <button class="carousel__btn carousel__btn_publications carousel__btn_type_next">
-              <img src="./images/arrow-right-publ.svg" alt="arrow next" />
+            <button class="carousel__btn carousel__btn_publications carousel__btn_type_next" id="publications-carousel-next-btn">
+              <img src="./images/arrow-right-publ.svg" alt="arrow next"/>
             </button>
           </div>
-          <div class="carousel__dots">
-            <button class="carousel__dot carousel__dot_active"></button>
-            <button class="carousel__dot"></button>
-            <button class="carousel__dot"></button>
-            <button class="carousel__dot"></button>
-          </div>
+          <div class="carousel__dots" id="publications-dots">
 
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="team"></section>
@@ -381,7 +380,7 @@
               <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Facebook.svg" alt="FB"></a>
               <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Telegram.svg" alt="Telegram"></a>
               <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/Insta.svg" alt="Instagram"></a>
-              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/You Tube.svg" alt="YouTube"></a>
+              <a class="footer__social-media-link" href="#"><img class="footer__social-media-icon" src="/images/Icon/YouTube.svg" alt="YouTube"></a>
             </div>
           </div>
         </div>
@@ -429,6 +428,10 @@
       </div>
     </div>
   </div>
+</template>
+
+<template id="publications-dot">
+  <button class="carousel__dot carousel__dot_publications"></button>
 </template>
 
 <script src="./js/index.js"></script>

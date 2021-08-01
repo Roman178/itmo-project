@@ -131,6 +131,10 @@
   opacity: 0.5;
 }
 
+.carousel__dot_publications {
+  background-color: #001337;
+}
+
 .carousel__dot_active {
   opacity: 1;
 }

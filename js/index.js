@@ -152,12 +152,6 @@ const publicationCards = [
     image: './images/Publication/publication_Intelligent sightseeing in immensely manifold cities.png',
     title: 'Intelligent sightseeing in immensely manifold cities: Case …',
     authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: ''
-  },
-  {
-    image: './images/Publication/publication_Convolutional neural networks with hierarchical context transfe….png',
-    title: 'Convolutional neural networks with hierarchical context transfe…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov, Lev Manovich',
     article: 'In this work, we show how social media data can be used for the improvement of touristic experience. We present an algorithm for automated touristic paths construction. Score function for location depends on three components: location social media popularity and rating, distances of place from others in r…'
   },
   {
@@ -179,21 +173,15 @@ const publicationCards = [
     article: 'In the modern world, with the growth of the volume of processed data arrays, the logic of solving problems also becomes more complex. This leads more and more often to the need to use high-performance computational clusters, such as supercomputers. Created m…'
   },
   {
-    image: './images/Publication/publication_Ensemble-based method of answers retrieval for domain spe.png',
-    title: 'Convolutional neural networks with hierarchical context transfe…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: ''
-  },
-  {
     image: './images/Publication/publication_Urban events prediction via convolutional neural networks a….png',
-    title: 'Ensemble-based method of answers retrieval for domain spe…',
+    title: 'Urban events prediction via convolutional neural networks a…',
     authors: 'Iskander Safiulin, Nikolay Butakov, Dmitriy Alexandrov, Denis Nasonov',
     article: 'In today’s world, it is crucial to be proactive and be prepared for events which are not happening yet. Thus, there is no surprise that in the field of social media analysis the research agenda has moved from the development of event detection methods to a brand new area - event prediction models...'
   },
   {
-    image: './images/Publication/publication_Convolutional neural networks with hierarchical context transfe….png',
-    title: 'Convolutional neural networks with hierarchical context transfe…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
+    image: './images/Publication/publication_Ensemble-based method of answers retrieval for domain spe.png',
+    title: 'Ensemble-based method of answers retrieval for domain spe…',
+    authors: 'Iskander Safiulin, Nikolay Butakov, Dmitriy Alexandrov, Denis Nasonov',
     article: 'Many companies want or prefer to use chatbot systems to provide smart assistants for accompanying human specialists especially newbies with automatic consulting. Implementation of a really useful smart assistant for a specific domain requires a knowledge base for this domain, that often e…'
   },
   {
@@ -301,6 +289,7 @@ const publicationCards = [
 ]
 
 // Создание карточки для блока Публикации
+
 function addPublicationsCard(item) {
   const publicationsCardTemplate = document.querySelector('#publications-card-template').content;
   const newPublicationsCard = publicationsCardTemplate.querySelector('.publications__card').cloneNode(true);
@@ -319,5 +308,18 @@ function addPublicationsCard(item) {
 publicationCards.forEach (function(item) {
   document.querySelector('#publications-cards-box').append(addPublicationsCard(item));
 });
+
+// Создание точек
+
+const publCards = document.querySelectorAll('.publications__card');
+const publCardsArray = Array.from(publCards);
+const publCardsNumberUp = Math.ceil(publCards.length / 3);
+
+for (let i = 1; i <= publCardsNumberUp; i++) {
+  document.querySelector('#publications-dots').append(document.querySelector('#publications-dot').content.cloneNode(true));
+}
+
+const publDots = document.querySelectorAll('.carousel__dot_publications');
+
 
 

@@ -59,7 +59,11 @@
 @import url(../blocks/publications/__content/publications__content.css);
 @import url(../blocks/publications/__title/publications__title.css);
 @import url(../blocks/publications/__carousel/publications__carousel.css);
+@import url(../blocks/publications/__carousel-wrapper/publications__carousel-wrapper.css);
+@import url(../blocks/publications/__carousel-cards-wrapper/publications__carousel-cards-wrapper.css);
+@import url(../blocks/publications/__carousel-cards-box/publications__carousel-cards-box.css);
 @import url(../blocks/publications/__card/publications__card.css);
+@import url(../blocks/publications/__card/_hidden/publications__card_hidden.css);
 @import url(../blocks/publications/__card-article/publications__card-article.css);
 @import url(../blocks/publications/__card-authors/publications__card-authors.css);
 @import url(../blocks/publications/__card-content/publications__card-content.css);
