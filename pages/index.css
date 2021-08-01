@@ -21,10 +21,12 @@
 @import url(../blocks/link/__button/link__button.css);
 
 /* header */
+
+
 /* @import url(../blocks/root/root.css); */
+
 @import url(../blocks/logo/logo.css);
 @import url(../blocks/logo/_footer/logo_footer.css);
-
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__content/header__content.css);
 @import url(../blocks/header/__menu/header__menu.css);
@@ -50,10 +52,13 @@
 /*carousel*/
 
 @import url(../blocks/carousel/carousel.css);
+
 /* @import url("../blocks/root/root.css");
 @import url("../blocks/fonts/fonts.css"); */
 
+
 /* projects */
+
 @import url("../blocks/projects/projects.css");
 
 /* partners */
@@ -76,6 +81,7 @@
 @import url("../blocks/connection/__subtitle/conection__subtitle.css");
 @import url("../blocks/connection/__title/connection__title.css");
 @import url("../blocks/connection/__form-container/connections__form-container.css");
+@import url('../blocks/connection/__content/connection__content.css');
 
 /* footer */
 
