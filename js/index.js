@@ -1,4 +1,5 @@
 // projects-создание, вставка карточек
+
 function createProjectCard(data) {
   const templateCard = document.querySelector("#template-card").content;
   const clonedCard = templateCard
@@ -35,10 +36,6 @@ function decomposeDataDepByScreenSize(arrNodesElsCards) {
       : document.body.scrollWidth > 751
       ? 3
       : 2;
-
-  // Решить
-  // let numCardsInWrapper = 0;
-  // window.innerWidth > 1023 ? (numCardsInWrapper = 4) : null;
 
   for (let i = 0; i < arrNodesElsCards.length; i++) {
     if (arr.length !== screenSize) {
@@ -100,7 +97,6 @@ function filterCards(tab) {
   clearCards();
   if (tab.id === "all-projects") {
     document.location.reload();
-    // pasteCardsInDoc(arrCards);
   } else {
     pasteCardsInDoc(filteredCards);
   }
@@ -147,17 +143,6 @@ function pastePagination() {
       '.header__link[href*="projects"]'
     );
     setTimeout(() => anchorProjects.click());
-    // const wrappers = e.listContainer.querySelectorAll(
-    //   ".projects__card-wrapper"
-    // );
-
-    // wrappers.forEach((cardWrapper, index) => {
-    //   const rowCards = cardWrapper.querySelectorAll(".projects__card");
-    //   rowCards.forEach((card, i) => {
-    //     card.key = i + "";
-    //     card.addEventListener("click", () => openCloseCard(card, cardWrapper));
-    //   });
-    // });
   });
 }
 
@@ -256,21 +241,11 @@ function openCloseCard(card, cardWrapper) {
   });
 
   if (+card.key + 1 === cardWrapper.children.length) {
-    // debugger;
     leftClosestCard.classList.add("projects__card_type_covered-right");
   } else {
-    // debugger;
     rigthClosestCard.classList.add("projects__card_type_covered-left");
   }
 }
-
-// allCardWrappers.forEach((cardWrapper, index) => {
-//   const rowCards = cardWrapper.querySelectorAll(".projects__card");
-//   rowCards.forEach((card, i) => {
-//     card.key = i + "";
-//     card.addEventListener("click", () => openCloseCard(card, cardWrapper));
-//   });
-// });
 
 // header
 const menuOpenButton = document.querySelector("#menu-open-button");
@@ -290,11 +265,14 @@ menuCloseButton.addEventListener("click", function () {
   headerLogo.classList.toggle("header__element-hidden");
 });
 
-// Карусель
-const prevBtn = document.querySelector(".carousel__btn_type_prev");
-const nextBtn = document.querySelector(".carousel__btn_type_next");
-const carousel = document.querySelector(".carousel__cards-box");
-const dotsBox = document.querySelector(".carousel__dots");
+// Карусель intro
+const intro = document.querySelector(".intro");
+
+const prevBtn = intro.querySelector(".carousel__btn_type_prev");
+const nextBtn = intro.querySelector(".carousel__btn_type_next");
+const carousel = intro.querySelector(".carousel__cards-box");
+const dotsBox = intro.querySelector(".carousel__dots");
+
 const dots = dotsBox.querySelectorAll(".carousel__dot");
 
 function switchCarouselSlide(slides) {
@@ -317,6 +295,7 @@ function switchCarouselSlide(slides) {
     carousel.classList.remove(
       `carousel__cards-box_slide_${slides.b.nameSlide}`
     );
+
     carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
     dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
   } else if (
@@ -394,270 +373,194 @@ dots.forEach((el, i) => {
   });
 });
 
-// publications cards
-const publicationCards = [
-  {
-    image: './images/Publication/publication_Topic-driven Ensemble for Online Advertising Generation.png',
-    title: 'Topic-driven Ensemble for Online Advertising Generation',
-    authors: 'Egor Nevezhin, Nikolay Butakov, Maria Khodorchenko, Maxim Petrov, Denis Nasonov',
-    article: 'Online advertising is one of the most widespread ways to reach and increase a target audience for those selling products. Usually having a form of a banner, advertising engages users into visiting a corresponding webpage. Professional generation of banners requires creative and writing skills and a basi…'
-  },
-  {
-    image: './images/Publication/publication_Convolutional neural networks with hierarchical context transfe.png',
-    title: 'Convolutional neural networks with hierarchical context transfe…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: 'In this work, we consider a problem of predicting the next state of a given area using retrospective information. The proposed concept of hierarchical context transfer (HCT) operates on several spatial levels of the input data to overcome major issues of next state prediction problems - density variability, a sig…'
-  },
-  {
-    image: './images/Publication/publication_Spatiotemporal Filtering Pipeline for Efficient Social Networks Dat….png',
-    title: 'Spatiotemporal Filtering Pipeline for Efficient Social Networks Dat…',
-    authors: 'Ksenia Mukhina, Alexander Visheratin, Denis Nasonov',
-    article: 'One of the areas that gathers momentum is the investigation of location-based social networks (LBSNs) because the understanding of citizens’ behavior on various scales can help to improve quality of living, enhance urban management, and advance the development of smart cities. But it is widely known that the…'
-  },
-  {
-    image: './images/Publication/publication_Peregreen–modular database for efficient storage of historical tim….png',
-    title: 'Peregreen–modular database for efficient storage of historical tim…',
-    authors: 'Alexander Visheratin, Alexey Struckov, Semen Yufa, Alexey Muratov, Denis Nasonov, Nikolay B…',
-    article: 'The rapid development of scientific and industrial areas, which rely on time series data processing, raises the demand for storage that would be able to process tens and hundreds of terabytes of data efficiently. And by efficiency, one should understand not only the speed of data processing operations execution but als…'
-  },
-  {
-    image: './images/Publication/publication_Intelligent sightseeing in immensely manifold cities.png',
-    title: 'Intelligent sightseeing in immensely manifold cities: Case …',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: 'In this work, we show how social media data can be used for the improvement of touristic experience. We present an algorithm for automated touristic paths construction. Score function for location depends on three components: location social media popularity and rating, distances of place from others in r…'
-  },
-  {
-    image: './images/Publication/publication_User Profiles Matching for Different Social Networks Based.png',
-    title: 'User Profiles Matching for Different Social Networks Based …',
-    authors: 'Timur Sokhin, Nikolay Butakov, Denis Nasonov',
-    article: 'It is common practice nowadays to use multiple social networks for different social roles. Although this, these networks assume differences in content type, communications and style of speech. If we intend to understand human behaviour as a key-feature for recommender systems, banking risk assessm…'
-  },
-  {
-    image: './images/Publication/publication_Orienteering Problem with Functional Profits for multi-sourc.png',
-    title: 'Orienteering Problem with Functional Profits for multi-sourc…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: 'Orienteering problem (OP) is a routing problem, where the aim is to generate a path through set of nodes, which would maximize total score and would not exceed the budget. In this paper, we present an extension of classic OP—Orienteering Problem with Functional Profits (OPFP), where the score of …'
-  },
-  {
-    image: './images/Publication/publicaion_Intellectual Execution Scheme of Iterative Computational Models ….png',
-    title: 'Intellectual Execution Scheme of Iterative Computational Models …',
-    authors: 'Mikhail Melnik, Denis A Nasonov, Alexey Liniov',
-    article: 'In the modern world, with the growth of the volume of processed data arrays, the logic of solving problems also becomes more complex. This leads more and more often to the need to use high-performance computational clusters, such as supercomputers. Created m…'
-  },
-  {
-    image: './images/Publication/publication_Urban events prediction via convolutional neural networks a….png',
-    title: 'Urban events prediction via convolutional neural networks a…',
-    authors: 'Iskander Safiulin, Nikolay Butakov, Dmitriy Alexandrov, Denis Nasonov',
-    article: 'In today’s world, it is crucial to be proactive and be prepared for events which are not happening yet. Thus, there is no surprise that in the field of social media analysis the research agenda has moved from the development of event detection methods to a brand new area - event prediction models...'
-  },
-  {
-    image: './images/Publication/publication_Ensemble-based method of answers retrieval for domain spe.png',
-    title: 'Ensemble-based method of answers retrieval for domain spe…',
-    authors: 'Iskander Safiulin, Nikolay Butakov, Dmitriy Alexandrov, Denis Nasonov',
-    article: 'Many companies want or prefer to use chatbot systems to provide smart assistants for accompanying human specialists especially newbies with automatic consulting. Implementation of a really useful smart assistant for a specific domain requires a knowledge base for this domain, that often e…'
-  },
-  {
-    image: './images/Publication/publication_Evaluation of modern tools and techniques for storing time-serie.png',
-    title: 'Evaluation of modern tools and techniques for storing time-serie…',
-    authors: 'Alexey Struckov, Semen Yufa, Alexander A Visheratin, Denis Nasonov',
-    article: 'Time series data as its analysis and applications recently have become increasingly important in different areas and domains. Many fields of science and industry rely on storing and processing large amounts of time series - economics and finance, medicine, the Internet of Things, environmental protection, …'
-  },
-  {
-    image: './images/Publication/publication_Workflow scheduling using neural networks and reinforcement lear.png',
-    title: 'Workflow scheduling using neural networks and reinforcement lear…',
-    authors: 'Mikhail Melnik, Denis Nasonov',
-    article: 'The development of information technologies entails a nonlinear growth of both volumes of data and the complexity of data processing itself. Scheduling is one of the main components for optimizing the operation of   the computing system. Currently, there are a large number of scheduling algorithms. However, even in spite of existing hybrid sch…'
-  },
-  {
-    image: './images/Publication/publication_Building City-Scale Walking Itineraries Using Large Geospatia.png',
-    title: 'Building City-Scale Walking Itineraries Using Large Geospatia…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Denis Nasonov',
-    article: 'Nowadays, social networks play an important role in many aspects of peoples life and in traveling in particular. People share their experience and opinions not only on specialized sites, like TripAdvisor, but also in social networks, e.g. Instagram. Combining information from different sources we can ge…'
-  },
-  {
-    image: './images/Publication/publication_Forecasting of the Urban Area State Using Convolutional Neural.png',
-    title: 'Forecasting of the Urban Area State Using Convolutional Neural…',
-    authors: 'Ksenia D Mukhina, Alexander A Visheratin, Gali-Ketema Mbogo, Denis Nasonov',
-    article: 'Active development of modern cities requires not only efficient monitoring systems but furthermore forecasting systems that can predict future state of the urban area with high accuracy. In this work we present a method for urban area prediction based on geospatial activity of users in social network. One of the …'
-  },
-  {
-    image: './images/Publication/publication_Multiscale event detection using convolutional quadtrees and ada.png',
-    title: 'Multiscale event detection using convolutional quadtrees and ada…',
-    authors: 'A A Visheratin, K D Mukhina, A K Visheratina, D Nasonov, A V Boukhanovsky',
-    article: 'Increasing popularity of social networks made them a viable data source for many data mining applications and event detection is no exception. Researchers aim not only to find events that happen in networks but more importantly to identify and locate events occurring in the real world. In this paper, we …'
-  },
-  {
-    image: './images/Publication/publication_Unified domain-specific language for collecting and processing dat.png',
-    title: ' …',
-    authors: 'Nikolay Butakov, Maxim Petrov, Ksenia Mukhina, Denis Nasonov, Sergey Kovalchuk',
-    article: 'Data provided by social media becomes an increasingly important analysis material for social scientists, market analysts, and other stakeholders. Diversity of interests leads to the emergence of a variety of crawling techniques and programming solutions. Nevertheless, these solutions have a lack of flexibility to sati…'
-  },
-  {
-    image: './images/Publication/publication_The multi-level adaptive approach for efficient execution of multi-sc.png',
-    title: 'The multi-level adaptive approach for efficient execution of multi-sc…',
-    authors: 'D Nasonov, N Butakov, M Melnik, A Visheratin, A Linev, P Shvets, S Sobolev, K Mukhina',
-    article: 'Today advanced research is based on complex simulations which require a lot of computational resources that usually are organized in a very complicated way from technical part of the view. It means that a scientist from physics, biology or even sociology should struggle with all technical is…'
-  },
-  {
-    image: './images/Publication/publication_Precedent-Based Approach for the Identification of Deviant Behavio.png',
-    title: 'Precedent-Based Approach for the Identification of Deviant Behavio…',
-    authors: 'Anna V Kalyuzhnaya, Nikolay O Nikitin, Nikolay Butakov, Denis Nasonov',
-    article: 'The current paper is devoted to a problem of deviant users’ identification in social media. For this purpose, each user of social media source should be described through a profile that aggregates open information about him/her within the special structure. Aggregated user profiles are formally describ…'
-  },
-  {
-    image: './images/Publication/publication_Blockchain-based transaction integrity in distributed big data.png',
-    title: 'Blockchain-based transaction integrity in distributed big data …',
-    authors: 'Denis Nasonov, Alexander A Visheratin, Alexander Boukhanovsky',
-    article: 'Today Big Data occupies a crucial part of scientific research areas as well as in the business analysis of large companies. Each company tries to find the best way to make generated Big Data sets valuable and profitable. However, in most cases, companies have not enough opportunities and budget t…'
-  },
-  {
-    image: './images/Publication/publication_Towards a scenario-based solution for extreme metocean event sim.png',
-    title: 'Towards a scenario-based solution for extreme metocean event sim…',
-    authors: 'A Kalyuzhnaya, D Nasonov, S Ivanov, S Kosukhin, A Boukhanovsky',
-    article: 'Today, metocean investigations, combined with forecasts and analysis of extreme events, require new design and development approaches because of their complexity. Extreme metocean events forecasting and prevention is an urgent computing task from decision-making and for reaction point of view.'
-  },
-  {
-    image: './images/Publication/publication_Storage tier-aware replicative data reorganization with prioritization.png',
-    title: 'Storage tier-aware replicative data reorganization with prioritization…',
-    authors: 'Anton Spivak, Andrew Razumovskiy, Denis Nasonov, Alexander Boukhanovsky, Anton Redice',
-    article: 'The importance of data collection, processing, and analysis is rapidly growing. Big Data technologies are in high demand in many fields, including bio-informatics, hydrometeorology, and high energy physics. One of the most popular computational paradigms used in large data processing fra…'
-  },
-  {
-    image: './images/Publication/publication_Hybrid scheduling algorithm in early warning systems.png',
-    title: 'Hybrid scheduling algorithm in early warning systems',
-    authors: 'A Visheratin, M Melnik, D Nasonov, N Butakov, A Boukhanovsky',
-    article: 'The development of an efficient Early Warning System (EWS) is essential for the prediction and prevention of imminent natural hazards. In addition to providing a computationally intensive infrastructure with extensive data transfer, high-execution reliability and hard-deadline satisfaction are important req…'
-  },
-  {
-    image: './images/Publication/publication_Distributed data-driven platform for urgent decision making in car.png',
-    title: 'Distributed data-driven platform for urgent decision making in car…',
-    authors: 'Sergey V Kovalchuk, Evgeniy Krotov, Pavel A Smirnov, Denis A Nasonov, Alexey N Yakovlev',
-    article: 'his paper presents ongoing research aimed at developing a data-driven platform for clinical decision support systems (DSSs) that require integration and processing of various data sources within a single solution. Resource management is developed within a framework of an urgent computing approach to address …'
-  },
-  {
-    image: './images/Publication/publication_Byzantine fault-tolerant and semantic-driven consensus proto.png',
-    title: 'Byzantine fault-tolerant and semantic-driven consensus proto…',
-    authors: 'Stepan Rakitin, Alexander A Visheratin, Denis Nasonov',
-    article: 'To provide fault tolerance, modern distributed storage systems use specialized network topologies and consensus protocols that create high overheads. The main disadvantage of existing specialized topologies is a difficulty to implement an efficient data placement that takes into account locality of the data. In scie…'
-  },
-  {
-    image: './images/Publication/publication_Adaptive performance model for dynamic scaling Apache Spark St.png',
-    title: 'Adaptive performance model for dynamic scaling Apache Spark St…',
-    authors: 'Max Petrov, Nikolay Butakov, Denis Nasonov, Mikhail Melnik',
-    article: 'Nowadays, data volumes increase exceptionally, a lot of information comes from different sources, for example, from mobile phones, sensors, traffic, etc. All information from these sources can be represented as a data streams, which can grow up and fall in time in their size. In the first case, data proce…'
-  },
-  {
-    image: './images/Publication/publication_Hybrid evolutionary workflow scheduling algorithm for dynami.png',
-    title: 'Hybrid evolutionary workflow scheduling algorithm for dynami…',
-    authors: 'D Nasonov, A Visheratin, N Butakov, N Shindyapina, M Melnik, A Boukhanovsky',
-    article: 'he optimal workflow scheduling is one of the most important issues in heterogeneous distributed computational environments. Existing heuristic and evolutionary scheduling algorithms have their advantages and disadvantages. In this work we propose a hybrid algorithm based on heuristic methods…'
-  },
-  {
-    image: './images/Publication/publication_Execution time estimation for workflow scheduling.png',
-    title: 'Execution time estimation for workflow scheduling',
-    authors: 'A Chirkin, Adam SZ Belloum, S Kovalchuk, Marc X Makkes, M Melnik, A Visheratin, D Nasonov',
-    article: 'Estimation of the execution time is an important part of the workflow scheduling problem. The aim of this paper is to highlight common problems in estimating the workflow execution time and propose a solution that takes into account the complexity and the stochastic aspects of the workflow compone…'
-  },
-]
+// Карусель team (must fix)
+const teamSection = document.querySelector(".team");
+
+const prevBtnTeam = teamSection.querySelector(".carousel__btn_type_prev");
+const nextBtnTeam = teamSection.querySelector(".carousel__btn_type_next");
+const carouselTeam = teamSection.querySelector(".carousel__cards-box");
+const dotsBoxTeam = teamSection.querySelector(".carousel__dots");
+const dotsTeam = dotsBoxTeam.querySelectorAll(".carousel__dot");
+
+function switchCarouselSlideTeam(slides) {
+  dotsTeam.forEach((el) => el.classList.remove("carousel__dot_active"));
+  if (
+    carouselTeam.classList.contains(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    )
+  ) {
+    carouselTeam.classList.remove(
+      `carousel__cards-box_slide_${slides.a.nameSlide}`
+    );
+    carouselTeam.classList.add(
+      `carousel__cards-box_slide_${slides.b.nameSlide}`
+    );
+    dotsTeam[slides.b.numDot - 1].classList.add("carousel__dot_active");
+  } else {
+    dotsTeam[slides.b.numDot - 1].classList.add("carousel__dot_active");
+    return;
+  }
+}
+
+function switchSlideByDotTeam(dotIndex, carouselEl, dotEl) {
+  carouselEl.className = "";
+  dotsTeam.forEach((el) => el.classList.remove("carousel__dot_active"));
+  dotEl.classList.add("carousel__dot_active");
+  switch (dotIndex) {
+    case 1:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_first"
+      );
+      break;
+    case 2:
+      carouselEl.classList.add(
+        "carousel__cards-box",
+        "carousel__cards-box_slide_second"
+      );
+      break;
+    default:
+      carouselEl.classList.add("carousel__cards-box");
+      break;
+  }
+}
+
+nextBtnTeam.addEventListener("click", () => {
+  switchCarouselSlideTeam({
+    a: { nameSlide: "first", numDot: 1 },
+    b: { nameSlide: "second", numDot: 2 },
+  });
+});
+
+prevBtnTeam.addEventListener("click", () => {
+  switchCarouselSlideTeam({
+    a: { nameSlide: "second", numDot: 2 },
+    b: { nameSlide: "first", numDot: 1 },
+  });
+});
+
+dotsTeam.forEach((el, i) => {
+  el.addEventListener("click", () => {
+    switchSlideByDotTeam(i + 1, carouselTeam, el);
+  });
+});
 
 // Создание карточки для блока Публикации
 
 function addPublicationsCard(item) {
-  const publicationsCardTemplate = document.querySelector('#publications-card-template').content;
-  const newPublicationsCard = publicationsCardTemplate.querySelector('.publications__card').cloneNode(true);
+  const publicationsCardTemplate = document.querySelector(
+    "#publications-card-template"
+  ).content;
+  const newPublicationsCard = publicationsCardTemplate
+    .querySelector(".publications__card")
+    .cloneNode(true);
 
-  newPublicationsCard.querySelector('.publications__card-image').src = item.image;
-  newPublicationsCard.querySelector('.publications__card-title').textContent = item.title;
-  newPublicationsCard.querySelector('.publications__card-authors').textContent = item.authors;
-  newPublicationsCard.querySelector('.publications__card-article').textContent = item.article;
+  newPublicationsCard.querySelector(".publications__card-image").src =
+    item.image;
+  newPublicationsCard.querySelector(".publications__card-title").textContent =
+    item.title;
+  newPublicationsCard.querySelector(".publications__card-authors").textContent =
+    item.authors;
+  newPublicationsCard.querySelector(".publications__card-article").textContent =
+    item.article;
 
-  newPublicationsCard.querySelector('.publications__card-share-button').addEventListener('click', function() {
-    newPublicationsCard.querySelector('.publications__card-share-popup').classList.toggle('publications__card-share-popup_open');
-  });
+  newPublicationsCard
+    .querySelector(".publications__card-share-button")
+    .addEventListener("click", function () {
+      newPublicationsCard
+        .querySelector(".publications__card-share-popup")
+        .classList.toggle("publications__card-share-popup_open");
+    });
   return newPublicationsCard;
 }
 
-publicationCards.forEach (function(item) {
-  document.querySelector('#publications-cards-box').append(addPublicationsCard(item));
+publicationCards.forEach(function (item) {
+  document
+    .querySelector("#publications-cards-box")
+    .append(addPublicationsCard(item));
 });
 
 // Создание точек
 
-const publCards = document.querySelectorAll('.publications__card');
+const publCards = document.querySelectorAll(".publications__card");
 const publCardsArray = Array.from(publCards);
 const publCardsNumberUp = Math.ceil(publCards.length / 3);
 
 for (let i = 1; i <= publCardsNumberUp; i++) {
-  document.querySelector('#publications-dots').append(document.querySelector('#publications-dot').content.cloneNode(true));
+  document
+    .querySelector("#publications-dots")
+    .append(
+      document.querySelector("#publications-dot").content.cloneNode(true)
+    );
 }
 
 // / Карусель publications
 
-const publBtnNext = document.querySelector('#publications-carousel-next-btn');
-const publBtnPrev = document.querySelector('#publications-carousel-prev-btn');
-const publDots = document.querySelectorAll('.carousel__dot_publications');
+const publBtnNext = document.querySelector("#publications-carousel-next-btn");
+const publBtnPrev = document.querySelector("#publications-carousel-prev-btn");
+const publDots = document.querySelectorAll(".carousel__dot_publications");
 
 // for (let i = 3; i < publCards.length; i++) {
 //   publCards[i].classList.add('publications__card_hidden');
 // }
 
-publDots[0].classList.add('carousel__dot_active');
+publDots[0].classList.add("carousel__dot_active");
 
 let i = 0;
 
-publBtnNext.addEventListener('click', moveLeft);
-function moveLeft(){
+publBtnNext.addEventListener("click", moveLeft);
+function moveLeft() {
   for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add('publications__card_hidden');
+    publCards[i].classList.add("publications__card_hidden");
   }
-    publCards[i].classList.add('publications__card_hidden');
-    publCards[i+1].classList.add('publications__card_hidden');
-    publCards[i+2].classList.add('publications__card_hidden');
-    publCards[i+3].classList.remove('publications__card_hidden');
-    publCards[i+4].classList.remove('publications__card_hidden');
-    publCards[i+5].classList.remove('publications__card_hidden');
-    i = i + 3;
-    publDots.forEach (function(item, index) {
-      if (!(publCards[3 * index].classList.contains('publications__card_hidden'))) {
-        publDots[index].classList.add('carousel__dot_active');
-      } else {
-        publDots[index].classList.remove('carousel__dot_active');
-      }
-    });
-}
-
-publBtnPrev.addEventListener('click', moveRight);
-function moveRight(){
-  for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add('publications__card_hidden');
-  }
-  publCards[i-1].classList.remove('publications__card_hidden');
-  publCards[i-2].classList.remove('publications__card_hidden');
-  publCards[i-3].classList.remove('publications__card_hidden');
-  publCards[i].classList.add('publications__card_hidden');
-  publCards[i+1].classList.add('publications__card_hidden');
-  publCards[i+2].classList.add('publications__card_hidden');
-  i = i - 3;
-  publDots.forEach (function(item, index) {
-    if (!(publCards[3 * index].classList.contains('publications__card_hidden'))) {
-      publDots[index].classList.add('carousel__dot_active');
+  publCards[i].classList.add("publications__card_hidden");
+  publCards[i + 1].classList.add("publications__card_hidden");
+  publCards[i + 2].classList.add("publications__card_hidden");
+  publCards[i + 3].classList.remove("publications__card_hidden");
+  publCards[i + 4].classList.remove("publications__card_hidden");
+  publCards[i + 5].classList.remove("publications__card_hidden");
+  i = i + 3;
+  publDots.forEach(function (item, index) {
+    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+      publDots[index].classList.add("carousel__dot_active");
     } else {
-      publDots[index].classList.remove('carousel__dot_active');
+      publDots[index].classList.remove("carousel__dot_active");
     }
   });
 }
 
-publDots.forEach (function(item, index, array) {
-  publDots[index].addEventListener('click', function() {
-    publCards.forEach (function(card) {
-      card.classList.add('publications__card_hidden');
+publBtnPrev.addEventListener("click", moveRight);
+function moveRight() {
+  for (let i = 0; i < publCards.length; i++) {
+    publCards[i].classList.add("publications__card_hidden");
+  }
+  publCards[i - 1].classList.remove("publications__card_hidden");
+  publCards[i - 2].classList.remove("publications__card_hidden");
+  publCards[i - 3].classList.remove("publications__card_hidden");
+  publCards[i].classList.add("publications__card_hidden");
+  publCards[i + 1].classList.add("publications__card_hidden");
+  publCards[i + 2].classList.add("publications__card_hidden");
+  i = i - 3;
+  publDots.forEach(function (item, index) {
+    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+      publDots[index].classList.add("carousel__dot_active");
+    } else {
+      publDots[index].classList.remove("carousel__dot_active");
+    }
+  });
+}
+
+publDots.forEach(function (item, index, array) {
+  publDots[index].addEventListener("click", function () {
+    publCards.forEach(function (card) {
+      card.classList.add("publications__card_hidden");
     });
-    publCards[index * 3].classList.remove('publications__card_hidden');
-    publCards[index * 3 + 1].classList.remove('publications__card_hidden');
-    publCards[index * 3 + 2].classList.remove('publications__card_hidden');
-    array.forEach (function(dot) {
-      dot.classList.remove('carousel__dot_active');
+    publCards[index * 3].classList.remove("publications__card_hidden");
+    publCards[index * 3 + 1].classList.remove("publications__card_hidden");
+    publCards[index * 3 + 2].classList.remove("publications__card_hidden");
+    array.forEach(function (dot) {
+      dot.classList.remove("carousel__dot_active");
     });
-    array[index].classList.add('carousel__dot_active');
+    array[index].classList.add("carousel__dot_active");
   });
 });

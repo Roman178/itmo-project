@@ -12,7 +12,7 @@
 .carousel {
   max-width: 1262px;
   overflow-x: hidden;
-  background-color: #001337;
+  /* background-color: #001337;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,15 @@
   overflow-x: hidden;
 }
 
+.carousel__cards-wrapper_type_small-cards {
+  max-width: 1110px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 31px;
+}
+
 .carousel__cards-box {
+  max-width: 100%;
   box-sizing: border-box;
   font-size: 0;
   display: flex;
@@ -71,9 +79,27 @@
   min-width: 344px;
   min-height: 345px; */
   background-color: #001337;
+  border-radius: 10px;
 }
 
-.carousel__card:nth-child(3n) {
+.carousel__card_type_small-cards {
+  min-width: 255px;
+  min-height: inherit;
+}
+
+.carousel__card:nth-of-type(3n) {
+  margin: 0;
+}
+
+.carousel__card_type_small-cards {
+  margin-right: 30px;
+}
+
+.carousel__card_type_small-cards:nth-of-type(3n) {
+  margin-right: 30px;
+}
+
+.carousel__card_type_small-cards:nth-of-type(4n) {
   margin: 0;
 }
 
@@ -86,6 +112,31 @@
   /* width: 330px;
   min-height: 330px; */
   border-radius: 10px;
+}
+
+.carousel__card-content_type_small-cards {
+  min-width: 255px;
+  min-height: 439px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1279px) {
+  .carousel__card-content_type_small-cards {
+    min-width: 210px;
+    min-height: 337px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel__card-content_type_small-cards {
+    min-width: 140px;
+    min-height: 256px;
+  }
 }
 
 .carousel__card-pin {
@@ -179,16 +230,13 @@
   .carousel {
     max-width: 1024px;
   }
-
   .carousel__card {
     min-width: 304px;
   }
-
   .carousel__card-title {
     font-size: 16.5px;
     margin-bottom: 10px;
   }
-
   .carousel__card-line {
     margin-bottom: 10px;
   }
@@ -198,16 +246,13 @@
   .carousel__btn {
     display: none;
   }
-
   .carousel__dots {
     display: none;
   }
-
   .carousel {
     max-width: 95vw;
     /* padding-left: 39px; */
   }
-
   .carousel__cards-wrapper {
     overflow-x: scroll;
   }
@@ -216,20 +261,16 @@
     min-height: 345px;
     margin-right: 16px;
   }
-
   .carousel__card:nth-child(3n) {
     margin-right: 16px;
   }
-
   .carousel__card-content {
     width: 330px;
     min-height: 330px;
   }
-
   .carousel__card-title {
     margin-bottom: 20px;
   }
-
   .carousel__card-line {
     margin-bottom: 20px;
   }
@@ -245,33 +286,27 @@
     min-height: 261px;
     margin-right: 10px;
   }
-
   .carousel__card:first-of-type {
     margin-left: 10px;
   }
-
   .carousel__card-content {
     width: 288px;
     min-height: 250px;
     padding: 16px 16px 0;
   }
-
   .carousel__card-date {
     font-size: 12px;
     line-height: 145%;
   }
-
   .carousel__card-text {
     font-size: 12px;
     line-height: 16px;
   }
-
   .carousel__card-title {
     font-size: 14px;
     line-height: 19px;
     margin-bottom: 12px;
   }
-
   .carousel__card-line {
     margin-bottom: 12px;
   }

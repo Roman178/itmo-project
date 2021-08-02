@@ -246,6 +246,10 @@
   cursor: pointer;
 }
 
+.projects__pag-btn_right {
+  transform: rotate(180deg);
+}
+
 .pagination {
   padding: 0;
   margin: 0;

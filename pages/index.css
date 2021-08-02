@@ -22,7 +22,6 @@
 
 /* header */
 
-
 /* @import url(../blocks/root/root.css); */
 
 @import url(../blocks/logo/logo.css);
@@ -53,9 +52,11 @@
 
 @import url(../blocks/carousel/carousel.css);
 
+/* @import url('../blocks/root/root.css');
+@import url('../blocks/fonts/fonts.css'); */
+
 /* @import url("../blocks/root/root.css");
 @import url("../blocks/fonts/fonts.css"); */
-
 
 /* projects */
 
@@ -81,7 +82,7 @@
 @import url("../blocks/connection/__subtitle/conection__subtitle.css");
 @import url("../blocks/connection/__title/connection__title.css");
 @import url("../blocks/connection/__form-container/connections__form-container.css");
-@import url('../blocks/connection/__content/connection__content.css');
+@import url("../blocks/connection/__content/connection__content.css");
 
 /* footer */
 
@@ -137,13 +138,13 @@
 
 /*team*/
 
-@import url('../blocks/team/team.css');
-@import url('../blocks/team/__arrow/team__arrow.css');
-@import url('../blocks/team/__card/team__card.css');
-@import url('../blocks/team/__cards/team__cards.css');
-@import url('../blocks/team/__dot/team__dot.css');
-@import url('../blocks/team/__title/team__title.css');
-@import url('../blocks/team/__name/team__name.css');
-@import url('../blocks/team/__card-picture/team__card-picture.css');
-@import url('../blocks/team/__post/team__post.css');
-@import url('../blocks/team/__container-cards/team__container-cards.css');
+@import url("../blocks/team/team.css");
+@import url("../blocks/team/__arrow/team__arrow.css");
+@import url("../blocks/team/__card/team__card.css");
+@import url("../blocks/team/__cards/team__cards.css");
+@import url("../blocks/team/__dot/team__dot.css");
+@import url("../blocks/team/__title/team__title.css");
+@import url("../blocks/team/__name/team__name.css");
+@import url("../blocks/team/__card-picture/team__card-picture.css");
+@import url("../blocks/team/__post/team__post.css");
+@import url("../blocks/team/__container-cards/team__container-cards.css");
