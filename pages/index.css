@@ -148,3 +148,23 @@
 @import url("../blocks/team/__card-picture/team__card-picture.css");
 @import url("../blocks/team/__post/team__post.css");
 @import url("../blocks/team/__container-cards/team__container-cards.css");
+
+/* stydy */
+@import url("../blocks/page/__study/page__study.css");
+@import url("../blocks/study/study.css");
+@import url("../blocks/study/__title/study__title.css");
+@import url("../blocks/study/__description/study__description.css");
+
+@import url("../blocks/study-card/study-card.css");
+@import url("../blocks/study-card/__info/study-card__info.css");
+@import url("../blocks/study-card/__title/study-card__title.css");
+@import url("../blocks/study-card/__list/study-card__list.css");
+@import url("../blocks/study-card/__list-item/study-card__list-item.css");
+@import url("../blocks/study-card/__link/study-card__link.css");
+@import url("../blocks/study-card/__img/study-card__img.css");
+
+@import url("../blocks/study/__tab/study__tab.css");
+@import url("../blocks/study/__tab-bar/study__tab-bar.css");
+@import url("../blocks/study/__tab-bar/_btn_aspirant/study__tab-bar_btn_aspirant.css");
+@import url("../blocks/study/__tab-bar/_btn_magistr/study__tab-bar_btn_magistr.css");
+@import url("../blocks/study/__tab-bar/_btn_active/study__tab-bar_btn_active.css");

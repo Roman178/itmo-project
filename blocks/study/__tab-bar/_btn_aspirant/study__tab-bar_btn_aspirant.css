@@ -1,0 +1,14 @@
+.study__tab-bar_btn_aspirant {
+  /* max-width: 280px; */
+  /* height: 60px; */
+  text-align: center;
+  padding: 15px 50px;
+  color: #fff;
+  background: transparent;
+}
+
+@media (max-width: 320px) {
+  .study__tab-bar_btn_aspirant {
+    padding: 15px 25px;
+  }
+}
