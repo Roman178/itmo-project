@@ -1,0 +1,28 @@
+.partners__logo-zone {
+  width: 100%;
+  max-width: 1110px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px -50px -10px;
+  /* можно сделать через grid, но не особо соответствует макету */
+}
+
+/* .partners__logo-zone::after {
+  content: "";
+  flex: auto;
+} */
+
+@media screen and (max-width: 1279px) {
+  .partners__logo-zone {
+    margin: 0 -25px -30px -25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partners__logo-zone {
+    margin: 0 -15px -20px -15px;
+  }
+}

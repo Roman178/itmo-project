@@ -1,0 +1,25 @@
+.publications__card-content {
+  width: 100%;
+  padding: 20px 19px 30px 19px;
+  box-sizing: border-box;
+  /* background-color: #e0f0ff; */
+  /* width: 348px;
+  min-height: 340px; */
+  /* width: 330px;
+  min-height: 330px; */
+  /* border-radius: 10px; */
+}
+
+@media screen and (max-width: 1023px) {
+  .publications__card-content {
+    padding: 20px 20px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .publications__card-content {
+    padding: 16px 16px 16px 16px;
+  }
+}
+
+
