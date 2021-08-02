@@ -1,0 +1,25 @@
+.publications__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 189%;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+  color: #001337;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1279px) {
+  .publications__title {
+    font-size: 24px;
+    line-height: 137.5%;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .publications__title {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+}

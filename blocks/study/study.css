@@ -1,0 +1,14 @@
+.study {
+  /* max-width: 1169px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: "Open Sans";
+}
+
+@media (max-width: 768px) {
+  .study {
+  }
+}
