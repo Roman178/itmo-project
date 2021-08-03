@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(106 169 172);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.carousel__wrapper {
+  width: 85%;
+}
+
+.carousel__arrow {
+}
+
+.carousel__bullets {
+  transform: translate(-50%, 45px);
+}
+
+.projects__slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.projects__slide-content {
+  border: 1px blue solid;
+  min-height: 200px;
+  min-width: 200px;
+  background-color: black;
+}
