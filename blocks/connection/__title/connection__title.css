@@ -1,0 +1,18 @@
+.connection__title {
+    align-self: center;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media screen and (max-width: 450px) {
+    .connection__title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}

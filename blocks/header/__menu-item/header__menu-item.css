@@ -1,0 +1,30 @@
+.header__menu-item {
+  position: relative;
+  height: 100%;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20.83px;
+  min-height: 80px;
+}
+
+.header__menu-item:hover .header__sub-menu {
+  display: flex;
+}
+/* .header__lang-link:hover {
+  opacity: .8;
+} */
+
+.header__menu-item:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__menu-item {
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start;
+  }
+}
