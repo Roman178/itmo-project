@@ -315,6 +315,7 @@
 .middle-carousel {
   width: 1122px;
   /* display: none; */
+  padding-bottom: 35px;
 }
 
 .middle-carousel__card {

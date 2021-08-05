@@ -1,0 +1,13 @@
+.lab__card-text {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #001337;
+  text-align: center;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .lab__card-text {
+    font-size: 10px;
+  }
+}

@@ -149,6 +149,41 @@
 @import url("../blocks/team/__post/team__post.css");
 @import url("../blocks/team/__container-cards/team__container-cards.css");
 
+/* LAB */
+@import url("../blocks/lab/lab.css");
+@import url("../blocks/lab/__inner/lab__inner.css");
+@import url("../blocks/lab/__wrapper/lab__wrapper.css");
+@import url("../blocks/lab/__title/lab__title.css");
+@import url("../blocks/lab/__item/lab__item.css");
+@import url("../blocks/lab/__description/lab__description.css");
+@import url("../blocks/lab/__text/lab__text.css");
+@import url("../blocks/lab/__img/lab__img.css");
+/* LAB CARDS*/
+@import url("../blocks/lab/__cards/lab__cards.css");
+@import url("../blocks/lab/__card/lab__card.css");
+@import url("../blocks/lab/__card-analysis/lab__card-analysis.css");
+@import url("../blocks/lab/__card-description/lab__card-description.css");
+@import url("../blocks/lab/__card-icon/lab__card-icon.css");
+@import url("../blocks/lab/__card-placeholder/lab__card-placeholder.css");
+@import url("../blocks/lab/__card-text/lab__card-text.css");
+@import url("../blocks/lab/__card-btn/lab__card-btn.css");
+
+@import url("../blocks/lab/__card-analysis/lab__card-analysis.css");
+@import url("../blocks/lab/__card-infrastructure/lab__card-infrastructure.css");
+@import url("../blocks/lab/__card-cloud/lab__card-cloud.css");
+@import url("../blocks/lab/__card-qa/lab__card-qa.css");
+/* LAB POPUP*/
+@import url("../blocks/lab-popup/lab-popup.css");
+@import url("../blocks/lab-popup/__container/lab-popup__container.css");
+@import url("../blocks/lab-popup/_image-photo/lab-popup_image-photo.css");
+@import url("../blocks/lab-popup/__text-content/lab-popup__text-content.css");
+@import url("../blocks/lab-popup/_caption/lab-popup_caption.css");
+@import url("../blocks/lab-popup/_text/lab-popup_text.css");
+@import url("../blocks/lab-popup/_list/lab-popup_list.css");
+@import url("../blocks/lab-popup/_list-item/lab-popup_list-item.css");
+@import url("../blocks/lab-popup/__close-btn/lab-popup__close-btn.css");
+@import url("../blocks/lab-popup/_opened/lab-popup_opened.css");
+
 /* stydy */
 @import url("../blocks/page/__study/page__study.css");
 @import url("../blocks/study/study.css");

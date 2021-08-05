@@ -1,0 +1,26 @@
+.lab__card-btn {
+  border: none;
+  background: transparent;
+  border: 1px solid #001337;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 0;
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #001337;
+
+  cursor: pointer;
+  z-index: 1;
+}
+/* .lab__card-btn:hover {
+  color: #fff;
+  border: 1px solid #fff;
+} */
+@media (max-width: 768px) {
+  .lab__card-btn {
+    font-size: 10px;
+    padding: 8px 0;
+  }
+}

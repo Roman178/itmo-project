@@ -530,123 +530,162 @@ dotsTeam.forEach((el, i) => {
 
 // Создание карточки для блока Публикации
 
-function addPublicationsCard(item) {
-  const publicationsCardTemplate = document.querySelector(
-    "#publications-card-template"
-  ).content;
-  const newPublicationsCard = publicationsCardTemplate
-    .querySelector(".publications__card")
-    .cloneNode(true);
+// function addPublicationsCard(item) {
+//   const publicationsCardTemplate = document.querySelector(
+//     "#publications-card-template"
+//   ).content;
+//   const newPublicationsCard = publicationsCardTemplate
+//     .querySelector(".publications__card")
+//     .cloneNode(true);
 
-  newPublicationsCard.querySelector(".publications__card-image").src =
-    item.image;
-  newPublicationsCard.querySelector(".publications__card-title").textContent =
-    item.title;
-  newPublicationsCard.querySelector(".publications__card-authors").textContent =
-    item.authors;
-  newPublicationsCard.querySelector(".publications__card-article").textContent =
-    item.article;
+//   newPublicationsCard.querySelector(".publications__card-image").src =
+//     item.image;
+//   newPublicationsCard.querySelector(".publications__card-title").textContent =
+//     item.title;
+//   newPublicationsCard.querySelector(".publications__card-authors").textContent =
+//     item.authors;
+//   newPublicationsCard.querySelector(".publications__card-article").textContent =
+//     item.article;
 
-  newPublicationsCard
-    .querySelector(".publications__card-share-button")
-    .addEventListener("click", function () {
-      newPublicationsCard
-        .querySelector(".publications__card-share-popup")
-        .classList.toggle("publications__card-share-popup_open");
-    });
-  return newPublicationsCard;
-}
+//   newPublicationsCard
+//     .querySelector(".publications__card-share-button")
+//     .addEventListener("click", function () {
+//       newPublicationsCard
+//         .querySelector(".publications__card-share-popup")
+//         .classList.toggle("publications__card-share-popup_open");
+//     });
+//   return newPublicationsCard;
+// }
 
-publicationCards.forEach(function (item) {
-  document
-    .querySelector("#publications-cards-box")
-    .append(addPublicationsCard(item));
-});
+// publicationCards.forEach(function (item) {
+//   document
+//     .querySelector("#publications-cards-box")
+//     .append(addPublicationsCard(item));
+// });
 
 // Создание точек
 
-const publCards = document.querySelectorAll(".publications__card");
-const publCardsArray = Array.from(publCards);
-const publCardsNumberUp = Math.ceil(publCards.length / 3);
+// const publCards = document.querySelectorAll(".publications__card");
+// const publCardsArray = Array.from(publCards);
+// const publCardsNumberUp = Math.ceil(publCards.length / 3);
 
-for (let i = 1; i <= publCardsNumberUp; i++) {
-  document
-    .querySelector("#publications-dots")
-    .append(
-      document.querySelector("#publications-dot").content.cloneNode(true)
-    );
-}
+// for (let i = 1; i <= publCardsNumberUp; i++) {
+//   document
+//     .querySelector("#publications-dots")
+//     .append(
+//       document.querySelector("#publications-dot").content.cloneNode(true)
+//     );
+// }
 
 // / Карусель publications
 
-const publBtnNext = document.querySelector("#publications-carousel-next-btn");
-const publBtnPrev = document.querySelector("#publications-carousel-prev-btn");
-const publDots = document.querySelectorAll(".carousel__dot_publications");
+// const publBtnNext = document.querySelector("#publications-carousel-next-btn");
+// const publBtnPrev = document.querySelector("#publications-carousel-prev-btn");
+// const publDots = document.querySelectorAll(".carousel__dot_publications");
 
 // for (let i = 3; i < publCards.length; i++) {
 //   publCards[i].classList.add('publications__card_hidden');
 // }
 
-publDots[0].classList.add("carousel__dot_active");
+// publDots[0].classList.add("carousel__dot_active");
 
-let i = 0;
+// let i = 0;
 
-publBtnNext.addEventListener("click", moveLeft);
-function moveLeft() {
-  for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add("publications__card_hidden");
-  }
-  publCards[i].classList.add("publications__card_hidden");
-  publCards[i + 1].classList.add("publications__card_hidden");
-  publCards[i + 2].classList.add("publications__card_hidden");
-  publCards[i + 3].classList.remove("publications__card_hidden");
-  publCards[i + 4].classList.remove("publications__card_hidden");
-  publCards[i + 5].classList.remove("publications__card_hidden");
-  i = i + 3;
-  publDots.forEach(function (item, index) {
-    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
-      publDots[index].classList.add("carousel__dot_active");
-    } else {
-      publDots[index].classList.remove("carousel__dot_active");
-    }
-  });
-}
+// publBtnNext.addEventListener("click", moveLeft);
+// function moveLeft() {
+//   for (let i = 0; i < publCards.length; i++) {
+//     publCards[i].classList.add("publications__card_hidden");
+//   }
+//   publCards[i].classList.add("publications__card_hidden");
+//   publCards[i + 1].classList.add("publications__card_hidden");
+//   publCards[i + 2].classList.add("publications__card_hidden");
+//   publCards[i + 3].classList.remove("publications__card_hidden");
+//   publCards[i + 4].classList.remove("publications__card_hidden");
+//   publCards[i + 5].classList.remove("publications__card_hidden");
+//   i = i + 3;
+//   publDots.forEach(function (item, index) {
+//     if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+//       publDots[index].classList.add("carousel__dot_active");
+//     } else {
+//       publDots[index].classList.remove("carousel__dot_active");
+//     }
+//   });
+// }
 
-publBtnPrev.addEventListener("click", moveRight);
-function moveRight() {
-  for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add("publications__card_hidden");
-  }
-  publCards[i - 1].classList.remove("publications__card_hidden");
-  publCards[i - 2].classList.remove("publications__card_hidden");
-  publCards[i - 3].classList.remove("publications__card_hidden");
-  publCards[i].classList.add("publications__card_hidden");
-  publCards[i + 1].classList.add("publications__card_hidden");
-  publCards[i + 2].classList.add("publications__card_hidden");
-  i = i - 3;
-  publDots.forEach(function (item, index) {
-    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
-      publDots[index].classList.add("carousel__dot_active");
-    } else {
-      publDots[index].classList.remove("carousel__dot_active");
-    }
-  });
-}
+// publBtnPrev.addEventListener("click", moveRight);
+// function moveRight() {
+//   for (let i = 0; i < publCards.length; i++) {
+//     publCards[i].classList.add("publications__card_hidden");
+//   }
+//   publCards[i - 1].classList.remove("publications__card_hidden");
+//   publCards[i - 2].classList.remove("publications__card_hidden");
+//   publCards[i - 3].classList.remove("publications__card_hidden");
+//   publCards[i].classList.add("publications__card_hidden");
+//   publCards[i + 1].classList.add("publications__card_hidden");
+//   publCards[i + 2].classList.add("publications__card_hidden");
+//   i = i - 3;
+//   publDots.forEach(function (item, index) {
+//     if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+//       publDots[index].classList.add("carousel__dot_active");
+//     } else {
+//       publDots[index].classList.remove("carousel__dot_active");
+//     }
+//   });
+// }
 
-publDots.forEach(function (item, index, array) {
-  publDots[index].addEventListener("click", function () {
-    publCards.forEach(function (card) {
-      card.classList.add("publications__card_hidden");
+// publDots.forEach(function (item, index, array) {
+//   publDots[index].addEventListener("click", function () {
+//     publCards.forEach(function (card) {
+//       card.classList.add("publications__card_hidden");
+//     });
+//     publCards[index * 3].classList.remove("publications__card_hidden");
+//     publCards[index * 3 + 1].classList.remove("publications__card_hidden");
+//     publCards[index * 3 + 2].classList.remove("publications__card_hidden");
+//     array.forEach(function (dot) {
+//       dot.classList.remove("carousel__dot_active");
+//     });
+//     array[index].classList.add("carousel__dot_active");
+//   });
+// });
+
+// Popup LAB
+
+const labPopup = document.querySelector(".lab-popup");
+const labPopupClose = document.querySelector(".lab-popup__close-btn");
+
+const labCardButton = [...document.querySelectorAll(".lab__card-btn")].forEach(
+  (labCardButton) => {
+    labCardButton.addEventListener("click", () => {
+      openPopup(labPopup);
     });
-    publCards[index * 3].classList.remove("publications__card_hidden");
-    publCards[index * 3 + 1].classList.remove("publications__card_hidden");
-    publCards[index * 3 + 2].classList.remove("publications__card_hidden");
-    array.forEach(function (dot) {
-      dot.classList.remove("carousel__dot_active");
-    });
-    array[index].classList.add("carousel__dot_active");
-  });
+  }
+);
+
+labPopupClose.addEventListener("click", () => {
+  closePopup(labPopup);
 });
+function openPopup(popup) {
+  popup.classList.add("lab-popup_opened");
+}
+function closePopup(popup) {
+  popup.classList.remove("lab-popup_opened");
+}
+/* ---------------------------------------------------------------------------- */
+// Hover LAB card
+const labCardText = document.querySelector(".lab__card-text");
+const labCard = [...document.querySelectorAll(".lab__card")].forEach(
+  (labCard) => {
+    labCard.addEventListener("mouseover", () => {
+      labCard.style.color = "#fff";
+      labCardButton.style.color = "#fff";
+      // labCardButton.style.border = '1px solid #fff';
+    });
+    labCard.addEventListener("mouseout", () => {
+      labCard.style.color = "#001337";
+    });
+  }
+);
+/* ---------------------------------------------------------------------------- */
 
 // study
 const studyButtonActive = document.querySelector(".study__tab-bar_btn_active");
