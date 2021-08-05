@@ -1,0 +1,13 @@
+.lab__card-icon {
+  /* width: 70px; */
+  /* height: 70px; */
+  border-radius: 36px;
+  box-shadow: 0px 4px 20px rgba(1, 54, 157, 0.15);
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .lab__card-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
