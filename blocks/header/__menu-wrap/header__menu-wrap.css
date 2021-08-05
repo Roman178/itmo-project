@@ -1,0 +1,25 @@
+.header__menu-wrap {
+  height: 100%;
+  min-width: 825px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1279px) {
+  .header__menu-wrap {
+    min-width: 725px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header__menu-wrap {
+    flex-direction: column;
+    min-width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
