@@ -11,6 +11,76 @@ body {
   width: 1122px;
 }
 
+.middle-carousel__card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 35px;
+  margin-right: 20px;
+  min-width: 360px;
+  min-height: 356px;
+  /* margin-right: 16px;
+  min-width: 344px;
+  min-height: 345px; */
+  background-color: #001337;
+  border-radius: 10px;
+}
+
+.middle-carousel__card-content {
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  background-color: #e0f0ff;
+  width: 348px;
+  min-height: 340px;
+  /* width: 330px;
+  min-height: 330px; */
+  border-radius: 10px;
+}
+
+.middle-carousel__card-date {
+  margin: 0 0 8px 0;
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #009fac;
+}
+
+.middle-carousel__card-title {
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 167%;
+  color: #001337;
+}
+
+.middle-carousel__card-line {
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid #009fac;
+}
+
+.middle-carousel__card-text {
+  margin: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000d26;
+}
+
+.middle-carousel__card-pin {
+  position: absolute;
+  top: 0;
+  right: -7px;
+}
+
 .middle-carousel__arrow {
   display: flex;
   align-items: center;
@@ -41,8 +111,7 @@ body {
 .middle-carousel__slide {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 30px;
+  justify-content: space-between;
 }
 
 .middle-carousel__slide-content {
