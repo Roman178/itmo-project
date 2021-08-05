@@ -266,112 +266,195 @@ menuCloseButton.addEventListener("click", function () {
 });
 
 // Карусель intro
-const intro = document.querySelector(".intro");
 
-const prevBtn = intro.querySelector(".carousel__btn_type_prev");
-const nextBtn = intro.querySelector(".carousel__btn_type_next");
-const carousel = intro.querySelector(".carousel__cards-box");
-const dotsBox = intro.querySelector(".carousel__dots");
+const introCarousel = document.querySelector(".intro__carousel");
+const introSlidesBox = introCarousel.querySelector(".glide__slides");
+const introCard = document
+  .querySelector("#middle-carousel-card")
+  .content.querySelector(".middle-carousel__card");
+const introSlide = document.createElement("li");
+introSlide.classList.add("glide__slide", "middle-carousel__slide");
 
-const dots = dotsBox.querySelectorAll(".carousel__dot");
-
-function switchCarouselSlide(slides) {
-  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
-  if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.a.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.a.nameSlide}`
-    );
-    carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
-    dots[slides.b.numDot - 1].classList.add("carousel__dot_active");
-  } else if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.b.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.b.nameSlide}`
-    );
-
-    carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
-    dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
-  } else if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.c.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.c.nameSlide}`
-    );
-    carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
-    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
-  } else {
-    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
-    return;
+function appendCardsInSlide(numCards, slide, card) {
+  for (let i = 0; i < numCards; i++) {
+    slide.append(card.cloneNode(true));
   }
 }
 
-function switchSlideByDot(dotIndex, carouselEl, dotEl) {
-  carouselEl.className = "";
-  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
-  dotEl.classList.add("carousel__dot_active");
-  switch (dotIndex) {
-    case 1:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_first"
-      );
-      break;
-    case 2:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_second"
-      );
-      break;
-    case 3:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_third"
-      );
-      break;
-    case 4:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_fourth"
-      );
-      break;
-    default:
-      carouselEl.classList.add("carousel__cards-box");
-      break;
+function appendSlidesInCarousel(numSlides, slidesBox, slide, carousel) {
+  for (let j = 0; j < numSlides; j++) {
+    slidesBox.append(slide.cloneNode(true));
+    const bullet = document.createElement("button");
+    bullet.dataset.glideDir = "=" + j;
+    bullet.classList.add("glide__bullet");
+    carousel.querySelector(".glide__bullets").append(bullet);
   }
 }
 
-nextBtn.addEventListener("click", () => {
-  switchCarouselSlide({
-    a: { nameSlide: "first", numDot: 1 },
-    b: { nameSlide: "second", numDot: 2 },
-    c: { nameSlide: "third", numDot: 3 },
-    d: { nameSlide: "fourth", numDot: 4 },
-  });
+function clearLastSlide(slidesBox, cardSelector, data) {
+  const startingLengthOfCards = slidesBox.querySelectorAll(cardSelector).length;
+
+  for (let k = data.length; k < startingLengthOfCards; k++) {
+    slidesBox
+      .querySelector(`.glide__slide:last-of-type ${cardSelector}:last-of-type`)
+      .remove();
+  }
+}
+
+appendCardsInSlide(3, introSlide, introCard);
+appendSlidesInCarousel(4, introSlidesBox, introSlide, introCarousel);
+clearLastSlide(introSlidesBox, ".middle-carousel__card", introData);
+
+const appendedCards = introCarousel.querySelectorAll(".middle-carousel__card");
+
+appendedCards.forEach((card, i) => {
+  card.querySelector(".middle-carousel__card-date").textContent =
+    introData[i].date;
+  card.querySelector(".middle-carousel__card-title").textContent =
+    introData[i].title;
+  card.querySelector(".middle-carousel__card-text").textContent =
+    introData[i].text;
 });
 
-prevBtn.addEventListener("click", () => {
-  switchCarouselSlide({
-    a: { nameSlide: "fourth", numDot: 4 },
-    b: { nameSlide: "third", numDot: 3 },
-    c: { nameSlide: "second", numDot: 2 },
-    d: { nameSlide: "first", numDot: 1 },
-  });
-});
+new Glide(".intro__carousel .middle-carousel__wrapper").mount();
 
-dots.forEach((el, i) => {
-  el.addEventListener("click", () => {
-    switchSlideByDot(i + 1, carousel, el);
+// Карусель Публикации 2.0
+
+const publCarousel = document.querySelector(".publications__carousel");
+const publSlidesBox = publCarousel.querySelector(".glide__slides");
+const publCard = document
+  .querySelector("#large-carousel-card")
+  .content.querySelector(".large-carousel__card");
+const publSlide = document.createElement("li");
+publSlide.classList.add("glide__slide", "large-carousel__slide");
+
+appendCardsInSlide(6, publSlide, publCard);
+appendSlidesInCarousel(
+  Math.ceil(publicationCards.length / 6),
+  publSlidesBox,
+  publSlide,
+  publCarousel
+);
+clearLastSlide(publSlidesBox, ".large-carousel__card", publicationCards);
+
+publCarousel
+  .querySelectorAll(".publications__card-share-button")
+  .forEach((el) => {
+    el.addEventListener("click", function () {
+      el.closest(".publications__card-nav-block")
+        .querySelector(".publications__card-share-popup")
+        .classList.toggle("publications__card-share-popup_open");
+    });
   });
-});
+
+new Glide(".publications__carousel .large-carousel__wrapper").mount();
+
+// const intro = document.querySelector(".intro");
+
+// const prevBtn = intro.querySelector(".carousel__btn_type_prev");
+// const nextBtn = intro.querySelector(".carousel__btn_type_next");
+// const carousel = intro.querySelector(".carousel__cards-box");
+// const dotsBox = intro.querySelector(".carousel__dots");
+
+// const dots = dotsBox.querySelectorAll(".carousel__dot");
+
+// function switchCarouselSlide(slides) {
+//   dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+//   if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.a.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.a.nameSlide}`
+//     );
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
+//     dots[slides.b.numDot - 1].classList.add("carousel__dot_active");
+//   } else if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.b.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.b.nameSlide}`
+//     );
+
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
+//     dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
+//   } else if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.c.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.c.nameSlide}`
+//     );
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
+//     dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+//   } else {
+//     dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+//     return;
+//   }
+// }
+
+// function switchSlideByDot(dotIndex, carouselEl, dotEl) {
+//   carouselEl.className = "";
+//   dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+//   dotEl.classList.add("carousel__dot_active");
+//   switch (dotIndex) {
+//     case 1:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_first"
+//       );
+//       break;
+//     case 2:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_second"
+//       );
+//       break;
+//     case 3:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_third"
+//       );
+//       break;
+//     case 4:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_fourth"
+//       );
+//       break;
+//     default:
+//       carouselEl.classList.add("carousel__cards-box");
+//       break;
+//   }
+// }
+
+// nextBtn.addEventListener("click", () => {
+//   switchCarouselSlide({
+//     a: { nameSlide: "first", numDot: 1 },
+//     b: { nameSlide: "second", numDot: 2 },
+//     c: { nameSlide: "third", numDot: 3 },
+//     d: { nameSlide: "fourth", numDot: 4 },
+//   });
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   switchCarouselSlide({
+//     a: { nameSlide: "fourth", numDot: 4 },
+//     b: { nameSlide: "third", numDot: 3 },
+//     c: { nameSlide: "second", numDot: 2 },
+//     d: { nameSlide: "first", numDot: 1 },
+//   });
+// });
+
+// dots.forEach((el, i) => {
+//   el.addEventListener("click", () => {
+//     switchSlideByDot(i + 1, carousel, el);
+//   });
+// });
 
 // Карусель team (must fix)
 const teamSection = document.querySelector(".team");
