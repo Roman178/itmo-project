@@ -1,0 +1,14 @@
+.team__cards {
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+@media screen and (max-width: 767px) {
+    .team__cards {
+        gap: 8px;
+    }
+}

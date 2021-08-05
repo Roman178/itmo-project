@@ -1,0 +1,29 @@
+.partners__text {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 167%;
+  letter-spacing: .1px;
+  padding-bottom: 30px;
+}
+
+.partners__text:last-of-type {
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .partners__text {
+    font-size: 14px;
+    line-height: 143%;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partners__text {
+    font-size: 12px;
+    line-height: 133%;
+    padding-bottom: 16px;
+    letter-spacing: normal;
+  }
+}

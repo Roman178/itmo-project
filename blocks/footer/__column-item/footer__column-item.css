@@ -1,0 +1,13 @@
+.footer__column-item {
+  padding-bottom: 8px;
+}
+
+.footer__column-item:last-of-type {
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__column-item {
+    padding-bottom: 0;
+  }
+}
