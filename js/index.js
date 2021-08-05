@@ -266,112 +266,195 @@ menuCloseButton.addEventListener("click", function () {
 });
 
 // Карусель intro
-const intro = document.querySelector(".intro");
 
-const prevBtn = intro.querySelector(".carousel__btn_type_prev");
-const nextBtn = intro.querySelector(".carousel__btn_type_next");
-const carousel = intro.querySelector(".carousel__cards-box");
-const dotsBox = intro.querySelector(".carousel__dots");
+const introCarousel = document.querySelector(".intro__carousel");
+const introSlidesBox = introCarousel.querySelector(".glide__slides");
+const introCard = document
+  .querySelector("#middle-carousel-card")
+  .content.querySelector(".middle-carousel__card");
+const introSlide = document.createElement("li");
+introSlide.classList.add("glide__slide", "middle-carousel__slide");
 
-const dots = dotsBox.querySelectorAll(".carousel__dot");
-
-function switchCarouselSlide(slides) {
-  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
-  if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.a.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.a.nameSlide}`
-    );
-    carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
-    dots[slides.b.numDot - 1].classList.add("carousel__dot_active");
-  } else if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.b.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.b.nameSlide}`
-    );
-
-    carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
-    dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
-  } else if (
-    carousel.classList.contains(
-      `carousel__cards-box_slide_${slides.c.nameSlide}`
-    )
-  ) {
-    carousel.classList.remove(
-      `carousel__cards-box_slide_${slides.c.nameSlide}`
-    );
-    carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
-    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
-  } else {
-    dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
-    return;
+function appendCardsInSlide(numCards, slide, card) {
+  for (let i = 0; i < numCards; i++) {
+    slide.append(card.cloneNode(true));
   }
 }
 
-function switchSlideByDot(dotIndex, carouselEl, dotEl) {
-  carouselEl.className = "";
-  dots.forEach((el) => el.classList.remove("carousel__dot_active"));
-  dotEl.classList.add("carousel__dot_active");
-  switch (dotIndex) {
-    case 1:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_first"
-      );
-      break;
-    case 2:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_second"
-      );
-      break;
-    case 3:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_third"
-      );
-      break;
-    case 4:
-      carouselEl.classList.add(
-        "carousel__cards-box",
-        "carousel__cards-box_slide_fourth"
-      );
-      break;
-    default:
-      carouselEl.classList.add("carousel__cards-box");
-      break;
+function appendSlidesInCarousel(numSlides, slidesBox, slide, carousel) {
+  for (let j = 0; j < numSlides; j++) {
+    slidesBox.append(slide.cloneNode(true));
+    const bullet = document.createElement("button");
+    bullet.dataset.glideDir = "=" + j;
+    bullet.classList.add("glide__bullet");
+    carousel.querySelector(".glide__bullets").append(bullet);
   }
 }
 
-nextBtn.addEventListener("click", () => {
-  switchCarouselSlide({
-    a: { nameSlide: "first", numDot: 1 },
-    b: { nameSlide: "second", numDot: 2 },
-    c: { nameSlide: "third", numDot: 3 },
-    d: { nameSlide: "fourth", numDot: 4 },
-  });
+function clearLastSlide(slidesBox, cardSelector, data) {
+  const startingLengthOfCards = slidesBox.querySelectorAll(cardSelector).length;
+
+  for (let k = data.length; k < startingLengthOfCards; k++) {
+    slidesBox
+      .querySelector(`.glide__slide:last-of-type ${cardSelector}:last-of-type`)
+      .remove();
+  }
+}
+
+appendCardsInSlide(3, introSlide, introCard);
+appendSlidesInCarousel(4, introSlidesBox, introSlide, introCarousel);
+clearLastSlide(introSlidesBox, ".middle-carousel__card", introData);
+
+const appendedCards = introCarousel.querySelectorAll(".middle-carousel__card");
+
+appendedCards.forEach((card, i) => {
+  card.querySelector(".middle-carousel__card-date").textContent =
+    introData[i].date;
+  card.querySelector(".middle-carousel__card-title").textContent =
+    introData[i].title;
+  card.querySelector(".middle-carousel__card-text").textContent =
+    introData[i].text;
 });
 
-prevBtn.addEventListener("click", () => {
-  switchCarouselSlide({
-    a: { nameSlide: "fourth", numDot: 4 },
-    b: { nameSlide: "third", numDot: 3 },
-    c: { nameSlide: "second", numDot: 2 },
-    d: { nameSlide: "first", numDot: 1 },
-  });
-});
+new Glide(".intro__carousel .middle-carousel__wrapper").mount();
 
-dots.forEach((el, i) => {
-  el.addEventListener("click", () => {
-    switchSlideByDot(i + 1, carousel, el);
+// Карусель Публикации 2.0
+
+const publCarousel = document.querySelector(".publications__carousel");
+const publSlidesBox = publCarousel.querySelector(".glide__slides");
+const publCard = document
+  .querySelector("#large-carousel-card")
+  .content.querySelector(".large-carousel__card");
+const publSlide = document.createElement("li");
+publSlide.classList.add("glide__slide", "large-carousel__slide");
+
+appendCardsInSlide(6, publSlide, publCard);
+appendSlidesInCarousel(
+  Math.ceil(publicationCards.length / 6),
+  publSlidesBox,
+  publSlide,
+  publCarousel
+);
+clearLastSlide(publSlidesBox, ".large-carousel__card", publicationCards);
+
+publCarousel
+  .querySelectorAll(".publications__card-share-button")
+  .forEach((el) => {
+    el.addEventListener("click", function () {
+      el.closest(".publications__card-nav-block")
+        .querySelector(".publications__card-share-popup")
+        .classList.toggle("publications__card-share-popup_open");
+    });
   });
-});
+
+new Glide(".publications__carousel .large-carousel__wrapper").mount();
+
+// const intro = document.querySelector(".intro");
+
+// const prevBtn = intro.querySelector(".carousel__btn_type_prev");
+// const nextBtn = intro.querySelector(".carousel__btn_type_next");
+// const carousel = intro.querySelector(".carousel__cards-box");
+// const dotsBox = intro.querySelector(".carousel__dots");
+
+// const dots = dotsBox.querySelectorAll(".carousel__dot");
+
+// function switchCarouselSlide(slides) {
+//   dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+//   if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.a.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.a.nameSlide}`
+//     );
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.b.nameSlide}`);
+//     dots[slides.b.numDot - 1].classList.add("carousel__dot_active");
+//   } else if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.b.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.b.nameSlide}`
+//     );
+
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.c.nameSlide}`);
+//     dots[slides.c.numDot - 1].classList.add("carousel__dot_active");
+//   } else if (
+//     carousel.classList.contains(
+//       `carousel__cards-box_slide_${slides.c.nameSlide}`
+//     )
+//   ) {
+//     carousel.classList.remove(
+//       `carousel__cards-box_slide_${slides.c.nameSlide}`
+//     );
+//     carousel.classList.add(`carousel__cards-box_slide_${slides.d.nameSlide}`);
+//     dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+//   } else {
+//     dots[slides.d.numDot - 1].classList.add("carousel__dot_active");
+//     return;
+//   }
+// }
+
+// function switchSlideByDot(dotIndex, carouselEl, dotEl) {
+//   carouselEl.className = "";
+//   dots.forEach((el) => el.classList.remove("carousel__dot_active"));
+//   dotEl.classList.add("carousel__dot_active");
+//   switch (dotIndex) {
+//     case 1:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_first"
+//       );
+//       break;
+//     case 2:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_second"
+//       );
+//       break;
+//     case 3:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_third"
+//       );
+//       break;
+//     case 4:
+//       carouselEl.classList.add(
+//         "carousel__cards-box",
+//         "carousel__cards-box_slide_fourth"
+//       );
+//       break;
+//     default:
+//       carouselEl.classList.add("carousel__cards-box");
+//       break;
+//   }
+// }
+
+// nextBtn.addEventListener("click", () => {
+//   switchCarouselSlide({
+//     a: { nameSlide: "first", numDot: 1 },
+//     b: { nameSlide: "second", numDot: 2 },
+//     c: { nameSlide: "third", numDot: 3 },
+//     d: { nameSlide: "fourth", numDot: 4 },
+//   });
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   switchCarouselSlide({
+//     a: { nameSlide: "fourth", numDot: 4 },
+//     b: { nameSlide: "third", numDot: 3 },
+//     c: { nameSlide: "second", numDot: 2 },
+//     d: { nameSlide: "first", numDot: 1 },
+//   });
+// });
+
+// dots.forEach((el, i) => {
+//   el.addEventListener("click", () => {
+//     switchSlideByDot(i + 1, carousel, el);
+//   });
+// });
 
 // Карусель team (must fix)
 const teamSection = document.querySelector(".team");
@@ -447,123 +530,162 @@ dotsTeam.forEach((el, i) => {
 
 // Создание карточки для блока Публикации
 
-function addPublicationsCard(item) {
-  const publicationsCardTemplate = document.querySelector(
-    "#publications-card-template"
-  ).content;
-  const newPublicationsCard = publicationsCardTemplate
-    .querySelector(".publications__card")
-    .cloneNode(true);
+// function addPublicationsCard(item) {
+//   const publicationsCardTemplate = document.querySelector(
+//     "#publications-card-template"
+//   ).content;
+//   const newPublicationsCard = publicationsCardTemplate
+//     .querySelector(".publications__card")
+//     .cloneNode(true);
 
-  newPublicationsCard.querySelector(".publications__card-image").src =
-    item.image;
-  newPublicationsCard.querySelector(".publications__card-title").textContent =
-    item.title;
-  newPublicationsCard.querySelector(".publications__card-authors").textContent =
-    item.authors;
-  newPublicationsCard.querySelector(".publications__card-article").textContent =
-    item.article;
+//   newPublicationsCard.querySelector(".publications__card-image").src =
+//     item.image;
+//   newPublicationsCard.querySelector(".publications__card-title").textContent =
+//     item.title;
+//   newPublicationsCard.querySelector(".publications__card-authors").textContent =
+//     item.authors;
+//   newPublicationsCard.querySelector(".publications__card-article").textContent =
+//     item.article;
 
-  newPublicationsCard
-    .querySelector(".publications__card-share-button")
-    .addEventListener("click", function () {
-      newPublicationsCard
-        .querySelector(".publications__card-share-popup")
-        .classList.toggle("publications__card-share-popup_open");
-    });
-  return newPublicationsCard;
-}
+//   newPublicationsCard
+//     .querySelector(".publications__card-share-button")
+//     .addEventListener("click", function () {
+//       newPublicationsCard
+//         .querySelector(".publications__card-share-popup")
+//         .classList.toggle("publications__card-share-popup_open");
+//     });
+//   return newPublicationsCard;
+// }
 
-publicationCards.forEach(function (item) {
-  document
-    .querySelector("#publications-cards-box")
-    .append(addPublicationsCard(item));
-});
+// publicationCards.forEach(function (item) {
+//   document
+//     .querySelector("#publications-cards-box")
+//     .append(addPublicationsCard(item));
+// });
 
 // Создание точек
 
-const publCards = document.querySelectorAll(".publications__card");
-const publCardsArray = Array.from(publCards);
-const publCardsNumberUp = Math.ceil(publCards.length / 3);
+// const publCards = document.querySelectorAll(".publications__card");
+// const publCardsArray = Array.from(publCards);
+// const publCardsNumberUp = Math.ceil(publCards.length / 3);
 
-for (let i = 1; i <= publCardsNumberUp; i++) {
-  document
-    .querySelector("#publications-dots")
-    .append(
-      document.querySelector("#publications-dot").content.cloneNode(true)
-    );
-}
+// for (let i = 1; i <= publCardsNumberUp; i++) {
+//   document
+//     .querySelector("#publications-dots")
+//     .append(
+//       document.querySelector("#publications-dot").content.cloneNode(true)
+//     );
+// }
 
 // / Карусель publications
 
-const publBtnNext = document.querySelector("#publications-carousel-next-btn");
-const publBtnPrev = document.querySelector("#publications-carousel-prev-btn");
-const publDots = document.querySelectorAll(".carousel__dot_publications");
+// const publBtnNext = document.querySelector("#publications-carousel-next-btn");
+// const publBtnPrev = document.querySelector("#publications-carousel-prev-btn");
+// const publDots = document.querySelectorAll(".carousel__dot_publications");
 
 // for (let i = 3; i < publCards.length; i++) {
 //   publCards[i].classList.add('publications__card_hidden');
 // }
 
-publDots[0].classList.add("carousel__dot_active");
+// publDots[0].classList.add("carousel__dot_active");
 
-let i = 0;
+// let i = 0;
 
-publBtnNext.addEventListener("click", moveLeft);
-function moveLeft() {
-  for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add("publications__card_hidden");
-  }
-  publCards[i].classList.add("publications__card_hidden");
-  publCards[i + 1].classList.add("publications__card_hidden");
-  publCards[i + 2].classList.add("publications__card_hidden");
-  publCards[i + 3].classList.remove("publications__card_hidden");
-  publCards[i + 4].classList.remove("publications__card_hidden");
-  publCards[i + 5].classList.remove("publications__card_hidden");
-  i = i + 3;
-  publDots.forEach(function (item, index) {
-    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
-      publDots[index].classList.add("carousel__dot_active");
-    } else {
-      publDots[index].classList.remove("carousel__dot_active");
-    }
-  });
-}
+// publBtnNext.addEventListener("click", moveLeft);
+// function moveLeft() {
+//   for (let i = 0; i < publCards.length; i++) {
+//     publCards[i].classList.add("publications__card_hidden");
+//   }
+//   publCards[i].classList.add("publications__card_hidden");
+//   publCards[i + 1].classList.add("publications__card_hidden");
+//   publCards[i + 2].classList.add("publications__card_hidden");
+//   publCards[i + 3].classList.remove("publications__card_hidden");
+//   publCards[i + 4].classList.remove("publications__card_hidden");
+//   publCards[i + 5].classList.remove("publications__card_hidden");
+//   i = i + 3;
+//   publDots.forEach(function (item, index) {
+//     if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+//       publDots[index].classList.add("carousel__dot_active");
+//     } else {
+//       publDots[index].classList.remove("carousel__dot_active");
+//     }
+//   });
+// }
 
-publBtnPrev.addEventListener("click", moveRight);
-function moveRight() {
-  for (let i = 0; i < publCards.length; i++) {
-    publCards[i].classList.add("publications__card_hidden");
-  }
-  publCards[i - 1].classList.remove("publications__card_hidden");
-  publCards[i - 2].classList.remove("publications__card_hidden");
-  publCards[i - 3].classList.remove("publications__card_hidden");
-  publCards[i].classList.add("publications__card_hidden");
-  publCards[i + 1].classList.add("publications__card_hidden");
-  publCards[i + 2].classList.add("publications__card_hidden");
-  i = i - 3;
-  publDots.forEach(function (item, index) {
-    if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
-      publDots[index].classList.add("carousel__dot_active");
-    } else {
-      publDots[index].classList.remove("carousel__dot_active");
-    }
-  });
-}
+// publBtnPrev.addEventListener("click", moveRight);
+// function moveRight() {
+//   for (let i = 0; i < publCards.length; i++) {
+//     publCards[i].classList.add("publications__card_hidden");
+//   }
+//   publCards[i - 1].classList.remove("publications__card_hidden");
+//   publCards[i - 2].classList.remove("publications__card_hidden");
+//   publCards[i - 3].classList.remove("publications__card_hidden");
+//   publCards[i].classList.add("publications__card_hidden");
+//   publCards[i + 1].classList.add("publications__card_hidden");
+//   publCards[i + 2].classList.add("publications__card_hidden");
+//   i = i - 3;
+//   publDots.forEach(function (item, index) {
+//     if (!publCards[3 * index].classList.contains("publications__card_hidden")) {
+//       publDots[index].classList.add("carousel__dot_active");
+//     } else {
+//       publDots[index].classList.remove("carousel__dot_active");
+//     }
+//   });
+// }
 
-publDots.forEach(function (item, index, array) {
-  publDots[index].addEventListener("click", function () {
-    publCards.forEach(function (card) {
-      card.classList.add("publications__card_hidden");
+// publDots.forEach(function (item, index, array) {
+//   publDots[index].addEventListener("click", function () {
+//     publCards.forEach(function (card) {
+//       card.classList.add("publications__card_hidden");
+//     });
+//     publCards[index * 3].classList.remove("publications__card_hidden");
+//     publCards[index * 3 + 1].classList.remove("publications__card_hidden");
+//     publCards[index * 3 + 2].classList.remove("publications__card_hidden");
+//     array.forEach(function (dot) {
+//       dot.classList.remove("carousel__dot_active");
+//     });
+//     array[index].classList.add("carousel__dot_active");
+//   });
+// });
+
+// Popup LAB
+
+const labPopup = document.querySelector(".lab-popup");
+const labPopupClose = document.querySelector(".lab-popup__close-btn");
+
+const labCardButton = [...document.querySelectorAll(".lab__card-btn")].forEach(
+  (labCardButton) => {
+    labCardButton.addEventListener("click", () => {
+      openPopup(labPopup);
     });
-    publCards[index * 3].classList.remove("publications__card_hidden");
-    publCards[index * 3 + 1].classList.remove("publications__card_hidden");
-    publCards[index * 3 + 2].classList.remove("publications__card_hidden");
-    array.forEach(function (dot) {
-      dot.classList.remove("carousel__dot_active");
-    });
-    array[index].classList.add("carousel__dot_active");
-  });
+  }
+);
+
+labPopupClose.addEventListener("click", () => {
+  closePopup(labPopup);
 });
+function openPopup(popup) {
+  popup.classList.add("lab-popup_opened");
+}
+function closePopup(popup) {
+  popup.classList.remove("lab-popup_opened");
+}
+/* ---------------------------------------------------------------------------- */
+// Hover LAB card
+const labCardText = document.querySelector(".lab__card-text");
+const labCard = [...document.querySelectorAll(".lab__card")].forEach(
+  (labCard) => {
+    labCard.addEventListener("mouseover", () => {
+      labCard.style.color = "#fff";
+      labCardButton.style.color = "#fff";
+      // labCardButton.style.border = '1px solid #fff';
+    });
+    labCard.addEventListener("mouseout", () => {
+      labCard.style.color = "#001337";
+    });
+  }
+);
+/* ---------------------------------------------------------------------------- */
 
 // study
 const studyButtonActive = document.querySelector(".study__tab-bar_btn_active");

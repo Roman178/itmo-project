@@ -1,6 +1,9 @@
 .publications__carousel {
   width: 100%;
-  max-width: 1262px;
+  /* max-width: 1262px; */
+
+  max-width: 1110px;
+
   /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;

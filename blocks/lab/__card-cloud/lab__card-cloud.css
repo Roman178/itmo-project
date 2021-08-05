@@ -1,0 +1,8 @@
+.lab__card-cloud {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    url(../../../images/Lab/Data.png);
+  background-size: cover;
+}
+.lab__card-cloud > .lab__card-description {
+  width: 130px;
+}

@@ -1,0 +1,10 @@
+.lab-popup_text:not(:last-of-type) {
+  margin-bottom: 35px;
+  /* outline: 1px solid red; */
+}
+
+@media (max-width: 320px) {
+  .lab-popup_text:not(:last-of-type) {
+    display: none;
+  }
+}
