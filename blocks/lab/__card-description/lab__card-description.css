@@ -1,0 +1,16 @@
+.lab__card-description {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  text-align: center;
+
+  z-index: 1;
+  /* grid-column: 1/3; */
+}
+
+@media (max-width: 768px) {
+  .lab__card-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
