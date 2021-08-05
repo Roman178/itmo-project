@@ -1,0 +1,37 @@
+/*  Кнопка закрытия попапа */
+.lab-popup__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  font-size: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  transition: opacity 0.3s linear;
+}
+.lab-popup__close-btn::before,
+.lab-popup__close-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000d26;
+  border-radius: 1px;
+}
+.lab-popup__close-btn::before {
+  transform: rotate(45deg);
+}
+.lab-popup__close-btn::after {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 320px) {
+  .lab-popup__close-btn {
+    width: 15px;
+    height: 15px;
+  }
+}

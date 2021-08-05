@@ -1,0 +1,14 @@
+.lab__inner {
+  padding: 80px 50px;
+}
+
+@media (max-width: 768px) {
+  .lab__inner {
+    padding: 80px 39px;
+  }
+}
+@media (max-width: 320px) {
+  .lab__inner {
+    padding: 40px 16px;
+  }
+}
